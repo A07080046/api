@@ -92,10 +92,17 @@
 ##### 83. [分店创建成员(modifyMember)](#83-分店创建成员)
 ##### 84. [分店获取部门信息(getOwnPartmentInfo)](#84-分店获取部门信息)
 ##### 85. [获取统计信息(getStatistics)](#85-获取统计信息)
+## 收货点
+##### 86. [收货点通过手机号获取预下单列表(getPreOrderList)](#86-收货点通过手机号获取预下单列表)
+##### 87. [收货点下单(placeOrder)](#87-收货点下单)
+##### 88. [收货点打印二维码(printBarCode)](#88-收货点打印二维码)
+##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
+##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
+##### 91. [收货点获取待打印货单(getReadyPrintQRcodeOrder)](#91-收货点获取待打印货单)
 ## 协议文档
-##### 86. [用户协议(user)](#86-用户协议)
-##### 87. [获取软件许可协议(software)](#87-获取软件许可协议)
-##### 88. [关于(about)](#88-关于)
+##### 92. [用户协议(user)](#92-用户协议)
+##### 93. [获取软件许可协议(software)](#93-获取软件许可协议)
+##### 94. [关于(about)](#94-关于)
 
 ---
 
@@ -363,6 +370,33 @@
         }
       ]
     },
+    "agent": {
+      "name": "18684165865收货点",
+      "logo": "http://localhost:3000/api/image?id=59f698e10931cf0b4e8b5262",
+      "image": "http://localhost:3000/api/image?id=59f698e70931cf0b4e8b5265",
+      "sign": "18684165865收货点18684165865收货点",
+      "phoneList": "18684165865",
+      "address": "贵州省贵阳市云岩区",
+      "location": [
+        106.709177,
+        26.629907
+      ],
+      "legalName": "1868416586",
+      "legalPhone": "18684165865",
+      "createTime": "2017-10-30 11:13:59",
+      "legalIDCard": [],
+      "descriptList": [],
+      "id": "59f698f70931cf0b4e8b5266",
+      "chairMan": {
+        "phone": "18684165865",
+        "id": "59df0a26009deb7e9298e18f"
+      },
+      "referShop": {
+        "name": "15555555501",
+        "address": "贵州省贵阳市云岩区黔灵山分店",
+        "id": "59e426b1b6ee191fe5d4fbf8"
+      }
+    },
     "phoneList": "",
     "userId": "5989a3c4b48db929e46ad6b0"
   }
@@ -612,7 +646,7 @@ authority为用户权限:
 | weight | Number | 一票货总的重量 |
 | size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
-| proxyCharge | Bool | 代收货款金额 |
+| proxyCharge | Number | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
 | totalDesignatedFee | Number | 指定收款金额 |
@@ -1009,7 +1043,7 @@ authority为用户权限:
 | weight | Number | 一票货总的重量 |
 | size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
-| proxyCharge | Bool | 代收货款金额 |
+| proxyCharge | Number | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
 | totalDesignatedFee | Number | 指定收款金额 |
@@ -3635,22 +3669,412 @@ authority为用户权限:
 ```
 
 ---
+## 收货点
+
+---
+
+### 86. [收货点通过手机号获取预下单列表](#86-收货点通过手机号获取预下单列表getpreorderlist)
+- `getPreOrderList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| senderPhone | String | 发货人手机号|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 2,
+    "orderList": [
+      {
+        "startPoint": "贵州省贵阳市",
+        "senderId": "59e416b1d9196a1dc3d5d961",
+        "senderPhone": "13984387205",
+        "senderName": "1024",
+        "receiverId": "59e419d4b6ee191fe5d4fbc6",
+        "receiverPhone": "13000000000",
+        "receiverName": "Test1",
+        "name": "种子",
+        "endPoint": "天津",
+        "sendDoorEndPoint": "",
+        "isSendToDoor": false,
+        "createTime": "2017-10-20 10:34:52",
+        "stateList": [
+          {
+            "state": -1,
+            "count": 1,
+            "_id": "59e960cc482e7a0be7dc7581"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "needPayTransportFee": 0,
+        "proxyChargeProfit": 0,
+        "proxyCharge": 0,
+        "designatedFee": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 0,
+        "branchProfit": 0,
+        "masterProfit": 0,
+        "profit": 0,
+        "fee": 0,
+        "payTool": 0,
+        "payMode": 0,
+        "isReachPay": false,
+        "insuanceFee": 0,
+        "insuanceMount": 0,
+        "isInsuance": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "needBondAmount": 0,
+        "roadmapRankIndex": -1,
+        "sendDoorEndPointLastCode": null,
+        "isSendDoor": false,
+        "endPointLastCode": 12,
+        "startPointLastCode": 0,
+        "isSenderRepresentShipper": true,
+        "isTransferOrder": false,
+        "id": "59e960cc482e7a0be7dc7580"
+      },
+      {
+        "shopId": "59df08df009deb7e9298e176",
+        "startPoint": "贵州省",
+        "senderId": "59e416b1d9196a1dc3d5d961",
+        "senderPhone": "13984387205",
+        "senderName": "范泽华",
+        "receiverId": "59e419d4b6ee191fe5d4fbc6",
+        "receiverPhone": "13000000000",
+        "receiverName": "伊藤诚",
+        "name": "种子",
+        "endPoint": "北京市东城区东华门街道",
+        "isSendToDoor": false,
+        "groupId": "59e5a1889594771ba19eeba7",
+        "createTime": "2017-10-17 14:21:39",
+        "stateList": [
+          {
+            "state": -1,
+            "count": 1,
+            "_id": "59e5a1739594771ba19eeba5"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "needPayTransportFee": 0,
+        "proxyChargeProfit": 0,
+        "proxyCharge": 0,
+        "designatedFee": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 0,
+        "branchProfit": 0,
+        "masterProfit": 0,
+        "profit": 0,
+        "fee": 0,
+        "payTool": 0,
+        "payMode": 0,
+        "isReachPay": false,
+        "insuanceFee": 0,
+        "insuanceMount": 0,
+        "isInsuance": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "needBondAmount": 0,
+        "roadmapRankIndex": -1,
+        "sendDoorEndPointLastCode": 0,
+        "isSendDoor": false,
+        "endPointLastCode": 110101001,
+        "startPointLastCode": 0,
+        "isSenderRepresentShipper": true,
+        "isTransferOrder": false,
+        "id": "59e5a1739594771ba19eeba4"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### 87. [收货点下单](#87-收货点下单placeorder)
+- `placeOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| senderPhone | String | 发货人手机号|
+| senderName | String | 发货人姓名|
+| receiverPhone | String | 收货人手机号|
+| receiverName | String | 收货人姓名|
+| endPoint | String | 终点|
+| endPointLastCode | Number | 编码|
+| sendDoorEndPoint | String | 送货上门终点|
+| sendDoorEndPointLastCode | Number | 送货上门终点编码|
+| name | String | 货物名|
+| totalNumbers | Number | 总件数 |
+| weight | Number | 重量 |
+| size | Number | 方量 |
+| isSendDoor | Bool | 是否送货上门 |
+| isReachPay | Bool | 是否到付 |
+| proxyCharge | Number | 代收货款金额 |
+| insuanceMount | Number | 保险 |
+| totalDesignatedFee | Number | 指定收款金额 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "state": 0
+  }
+}
+```
+
+---
+
+### 88. [收货点打印二维码](#88-收货点打印二维码printbarcode)
+- `printBarCode`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "startPoint": "贵州省贵阳市",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderPhone": "18083602719",
+    "senderName": "第一物流老大",
+    "receiverId": "59df08e5009deb7e9298e179",
+    "receiverPhone": "17608566786",
+    "receiverName": "收货人2",
+    "name": "0000",
+    "endPoint": "北京市",
+    "isSendToDoor": false,
+    "shopId": "59df08df009deb7e9298e176",
+    "receivePartmentId": "59df0968009deb7e9298e17e",
+    "receiveMemberId": "59df1048009deb7e9298e1eb",
+    "placeOrderTime": "2017-10-12 16:06:36",
+    "photo": "http://localhost:3000/api/image?id=59df22a4009deb7e9298e2de",
+    "modifyTime": "2017-10-31 08:57:21",
+    "deductError": false,
+    "roadmapId": "59df0d32009deb7e9298e1ca",
+    "shipperChairManId": "59df0b1f009deb7e9298e19a",
+    "shipperId": "59df0c27009deb7e9298e1a7",
+    "storeScannerId": "59df09bf009deb7e9298e185",
+    "loadScannerId": "59df0b1f009deb7e9298e19a",
+    "truckId": "59df23f4009deb7e9298e2f7",
+    "confirmHandOverId": "59df0b1f009deb7e9298e19a",
+    "createTime": "2017-10-12 15:50:17",
+    "stateList": [
+      {
+        "state": 1,
+        "count": 2,
+        "_id": "59f7ca71d3aaa5190fe1060f"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 244,
+    "proxyChargeProfit": 10,
+    "proxyCharge": 1000,
+    "designatedFee": 0,
+    "totalDesignatedFee": 20,
+    "realFee": 264,
+    "branchProfit": 30.799999999999997,
+    "masterProfit": 13.200000000000003,
+    "profit": 44,
+    "fee": 220,
+    "payTool": 0,
+    "payMode": 2,
+    "isReachPay": true,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 2,
+    "totalNumbers": 2,
+    "needBondAmount": 20000,
+    "roadmapRankIndex": 1,
+    "sendDoorEndPointLastCode": 0,
+    "isSendDoor": false,
+    "endPointLastCode": 11,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": true,
+    "isTransferOrder": false,
+    "id": "59df1eb9009deb7e9298e28f",
+    "state": 1
+  }
+}
+```
+
+---
+
+### 89. [收货点打印二货单](#89-收货点打印二货单printorderlistbill)
+- `printOrderListBill`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderIdList | Array | 货单Id数组 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
+
+### 90. [收货点代支付货单](#90-收货点代支付货单proxypayfororderlist)
+- `proxyPayForOrderList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderIdList | Array | 货单Id数组 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
+
+### 91. [收货点获取待打印货单](#91-收货点获取待打印货单getreadyprintqrcodeorder)
+- `getReadyPrintQRcodeOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "agentId": "59f698f70931cf0b4e8b5266",
+  "senderId": "59df087f009deb7e9298e16f",
+  "senderName": "fang1",
+  "senderPhone": "18083602719",
+  "receiverId": "59df0a26009deb7e9298e18f",
+  "receiverPhone": "18684165865",
+  "receiverName": "方运江",
+  "name": "腊肉",
+  "endPoint": "北京",
+  "sendDoorEndPoint": "东城区景山街道",
+  "placeOrderTime": "2017-10-30 16:35:02",
+  "createTime": "2017-10-30 16:35:02",
+  "stateList": [
+    {
+      "state": 0,
+      "count": 5,
+      "_id": "59f6e4361dc67612a47e3162"
+    }
+  ],
+  "needPayInsuanceFee": 0,
+  "needPayTransportFee": 0,
+  "proxyChargeProfit": 0,
+  "proxyCharge": 0,
+  "designatedFee": 0,
+  "totalDesignatedFee": 0,
+  "realFee": 0,
+  "branchProfit": 0,
+  "masterProfit": 0,
+  "profit": 0,
+  "fee": 0,
+  "payTool": 0,
+  "payMode": 0,
+  "isReachPay": false,
+  "insuanceFee": 0,
+  "insuanceMount": 0,
+  "isInsuance": false,
+  "size": 1,
+  "weight": 1,
+  "totalNumbers": 5,
+  "needBondAmount": 0,
+  "roadmapRankIndex": -1,
+  "sendDoorEndPointLastCode": 110101002,
+  "isSendDoor": true,
+  "endPointLastCode": 11,
+  "startPointLastCode": 0,
+  "isSenderRepresentShipper": false,
+  "isTransferOrder": false,
+  "id": "59f6e4361dc67612a47e3161"
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 86. [用户协议](#86-用户协议user)
+### 92. [用户协议](#92-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 87. [获取软件许可协议](#87-获取软件许可协议software)
+### 93. [获取软件许可协议](#93-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 88. [关于](#88-关于about)
+### 94. [关于](#94-关于about)
 - `about`
 - url: `protocals/about.html`
