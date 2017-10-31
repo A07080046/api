@@ -98,14 +98,15 @@
 ##### 88. [收货点打印二维码(printBarCode)](#88-收货点打印二维码)
 ##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
 ##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
-##### 91. [收货点获取未完成货单(getLastestOrder)](#91-收货点获取未完成货单)
-##### 92. [收货点获取成员列表(getMemberList)](#92-收货点获取成员列表)
-##### 93. [收货点修改成员权限(modifyMemberAuthority)](#93-收货点修改成员权限)
-##### 94. [收货点通过手机号搜索成员(getMemberByPhone)](#94-收货点通过手机号搜索成员)
+##### 91. [收货点获取货单费用(getOrderFee)](#91-收货点获取货单费用)
+##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
+##### 93. [收货点获取成员列表(getMemberList)](#93-收货点获取成员列表)
+##### 94. [收货点修改成员权限(modifyMemberAuthority)](#94-收货点修改成员权限)
+##### 95. [收货点通过手机号搜索成员(getMemberByPhone)](#95-收货点通过手机号搜索成员)
 ## 协议文档
-##### 95. [用户协议(user)](#95-用户协议)
-##### 96. [获取软件许可协议(software)](#96-获取软件许可协议)
-##### 97. [关于(about)](#97-关于)
+##### 96. [用户协议(user)](#96-用户协议)
+##### 97. [获取软件许可协议(software)](#97-获取软件许可协议)
+##### 98. [关于(about)](#98-关于)
 
 ---
 
@@ -4000,7 +4001,28 @@ authority为用户权限:
 
 ---
 
-### 91. [收货点获取未完成货单](#91-收货点获取未完成货单getlastestorder)
+### 91. [收货点获取货单费用](#91-收货点获取货单费用getorderfee)
+- `getOrderFee`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "needPayTransportFee": 1200,
+    "needPayInsuanceFee": 120
+  }
+}
+```
+
+---
+
+### 92. [收货点获取未完成货单](#92-收货点获取未完成货单getlastestorder)
 - `getLastestOrder`
 - 请求方式：`POST`
 
@@ -4062,7 +4084,7 @@ authority为用户权限:
 ```
 
 ---
-### 92. [收货点获取成员列表](#92-收货点获取成员列表getmemberlist)
+### 93. [收货点获取成员列表](#93-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4102,7 +4124,7 @@ authority为用户权限:
 ```
 
 ---
-### 93. [收货点修改成员权限](#93-收货点修改成员权限modifymemberauthority)
+### 94. [收货点修改成员权限](#94-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4132,7 +4154,7 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点通过手机号搜索成员](#94-收货点通过手机号搜索成员getmemberbyphone)
+### 95. [收货点通过手机号搜索成员](#95-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4161,18 +4183,18 @@ authority为用户权限:
 
 ---
 
-### 95. [用户协议](#95-用户协议user)
+### 96. [用户协议](#96-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 96. [获取软件许可协议](#96-获取软件许可协议software)
+### 97. [获取软件许可协议](#97-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 97. [关于](#97-关于about)
+### 98. [关于](#98-关于about)
 - `about`
 - url: `protocals/about.html`
