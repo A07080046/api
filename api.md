@@ -98,7 +98,7 @@
 ##### 88. [收货点打印二维码(printBarCode)](#88-收货点打印二维码)
 ##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
 ##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
-##### 91. [收货点获取待打印货单(getReadyPrintQRcodeOrder)](#91-收货点获取待打印货单)
+##### 91. [收货点获取未完成货单(getLastestOrder)](#91-收货点获取未完成货单)
 ##### 92. [收货点获取成员列表(getMemberList)](#92-收货点获取成员列表)
 ##### 93. [收货点修改成员权限(modifyMemberAuthority)](#93-收货点修改成员权限)
 ##### 94. [收货点通过手机号搜索成员(getMemberByPhone)](#94-收货点通过手机号搜索成员)
@@ -4000,8 +4000,8 @@ authority为用户权限:
 
 ---
 
-### 91. [收货点获取待打印货单](#91-收货点获取待打印货单getreadyprintqrcodeorder)
-- `getReadyPrintQRcodeOrder`
+### 91. [收货点获取未完成货单](#91-收货点获取未完成货单getlastestorder)
+- `getLastestOrder`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
