@@ -99,10 +99,13 @@
 ##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
 ##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
 ##### 91. [收货点获取待打印货单(getReadyPrintQRcodeOrder)](#91-收货点获取待打印货单)
+##### 92. [收货点获取成员列表(getMemberList)](#92-收货点获取成员列表)
+##### 93. [收货点修改成员权限(modifyMemberAuthority)](#93-收货点修改成员权限)
+##### 94. [收货点通过手机号搜索成员(getMemberByPhone)](#94-收货点通过手机号搜索成员)
 ## 协议文档
-##### 92. [用户协议(user)](#92-用户协议)
-##### 93. [获取软件许可协议(software)](#93-获取软件许可协议)
-##### 94. [关于(about)](#94-关于)
+##### 95. [用户协议(user)](#95-用户协议)
+##### 96. [获取软件许可协议(software)](#96-获取软件许可协议)
+##### 97. [关于(about)](#97-关于)
 
 ---
 
@@ -4059,22 +4062,117 @@ authority为用户权限:
 ```
 
 ---
+### 92. [收货点获取成员列表](#92-收货点获取成员列表getmemberlist)
+- `getMemberList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "memberList": [
+      {
+        "phone": "18684165865",
+        "registerTime": "2017-10-12 14:22:30",
+        "shipperId": "59df0b86009deb7e9298e19c",
+        "head": "http://localhost:3000/api/image?id=59df35441b989b12d6ac11d1",
+        "agentId": "59f698f70931cf0b4e8b5266",
+        "createTime": "2017-10-12T06:22:30.345Z",
+        "isSetPaymentPassword": 1,
+        "authority": [
+          40000,
+          40001,
+          40002,
+          10008,
+          10005,
+          10006,
+          10007,
+          10009
+        ],
+        "sex": 0,
+        "id": "59df0a26009deb7e9298e18f"
+      }
+    ]
+  }
+}
+```
+
+---
+### 93. [收货点修改成员权限](#93-收货点修改成员权限modifymemberauthority)
+- `modifyMemberAuthority`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| memberId | ID | 成员Id |
+| authority | Array | 权限列表Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "phone": "15629002829",
+    "registerTime": "2017-10-19 14:29:59",
+    "createTime": "2017-10-19T06:29:59.222Z",
+    "isSetPaymentPassword": 0,
+    "authority": [
+      40001,
+      40002,
+      40003
+    ],
+    "sex": 0,
+    "id": "59e846675d12e51039dde2e0"
+  }
+}
+```
+
+---
+### 94. [收货点通过手机号搜索成员](#94-收货点通过手机号搜索成员getmemberbyphone)
+- `getMemberByPhone`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| memberPhone | String | 成员手机号 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "phone": "13312341234",
+    "email": "42550564@qq.com",
+    "registerTime": "2017-08-30 19:41:55",
+    "createTime": "2017-08-30T11:41:55.543Z",
+    "authority": [],
+    "sex": 0,
+    "id": "59a6a483523fa0838161fd27"
+  }
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 92. [用户协议](#92-用户协议user)
+### 95. [用户协议](#95-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 93. [获取软件许可协议](#93-获取软件许可协议software)
+### 96. [获取软件许可协议](#96-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 94. [关于](#94-关于about)
+### 97. [关于](#97-关于about)
 - `about`
 - url: `protocals/about.html`
