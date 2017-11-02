@@ -100,13 +100,14 @@
 ##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
 ##### 91. [收货点获取货单费用(getOrderFee)](#91-收货点获取货单费用)
 ##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
-##### 93. [收货点获取成员列表(getMemberList)](#93-收货点获取成员列表)
-##### 94. [收货点修改成员权限(modifyMemberAuthority)](#94-收货点修改成员权限)
-##### 95. [收货点通过手机号搜索成员(getMemberByPhone)](#95-收货点通过手机号搜索成员)
+##### 93. [收货点获取订单(getOrders)](#93-收货点获取订单)
+##### 94. [收货点获取成员列表(getMemberList)](#94-收货点获取成员列表)
+##### 95. [收货点修改成员权限(modifyMemberAuthority)](#95-收货点修改成员权限)
+##### 96. [收货点通过手机号搜索成员(getMemberByPhone)](#96-收货点通过手机号搜索成员)
 ## 协议文档
-##### 96. [用户协议(user)](#96-用户协议)
-##### 97. [获取软件许可协议(software)](#97-获取软件许可协议)
-##### 98. [关于(about)](#98-关于)
+##### 97. [用户协议(user)](#97-用户协议)
+##### 98. [获取软件许可协议(software)](#98-获取软件许可协议)
+##### 99. [关于(about)](#99-关于)
 
 ---
 
@@ -4084,7 +4085,98 @@ authority为用户权限:
 ```
 
 ---
-### 93. [收货点获取成员列表](#93-收货点获取成员列表getmemberlist)
+### 93. [收货点获取订单](#93-收货点获取订单getorders)
+- `getOrders`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | 类型 (toprintbarcode,topay,toprintbill)|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "toprintbarcode": {
+      "count": 2,
+      "list": [
+        {
+          "senderName": "fang1",
+          "senderPhone": "18083602719",
+          "receiverPhone": "18684165865",
+          "receiverName": "方运江",
+          "name": "腊肉",
+          "endPoint": "北京",
+          "sendDoorEndPoint": "东城区景山街道",
+          "placeOrderTime": "2017-11-01 10:51:04",
+          "createTime": "2017-11-01 10:51:04",
+          "stateList": [
+            {
+              "state": 0,
+              "count": 5,
+              "_id": "59f936989db3a131c07c23f4"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 0,
+          "proxyCharge": 0,
+          "totalDesignatedFee": 0,
+          "payMode": 0,
+          "size": 1,
+          "weight": 1,
+          "totalNumbers": 5,
+          "isSendDoor": true,
+          "isCityDistribute": false,
+          "id": "59f936989db3a131c07c23f3"
+        },
+        {
+          "senderName": "fang1",
+          "senderPhone": "18083602719",
+          "receiverPhone": "18684165865",
+          "receiverName": "方运江",
+          "name": "腊肉",
+          "endPoint": "北京",
+          "sendDoorEndPoint": "东城区景山街道",
+          "placeOrderTime": "2017-10-30 16:35:02",
+          "createTime": "2017-10-30 16:35:02",
+          "stateList": [
+            {
+              "state": 0,
+              "count": 5,
+              "_id": "59f6e4361dc67612a47e3162"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 0,
+          "proxyCharge": 0,
+          "totalDesignatedFee": 0,
+          "payMode": 0,
+          "size": 1,
+          "weight": 1,
+          "totalNumbers": 5,
+          "isSendDoor": true,
+          "isCityDistribute": false,
+          "id": "59f6e4361dc67612a47e3161"
+        }
+      ]
+    },
+    "topay": {
+      "count": 0,
+      "list": []
+    },
+    "toprintbill": {
+      "count": 0,
+      "list": []
+    }
+  }
+}
+```
+
+---
+### 94. [收货点获取成员列表](#94-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4124,7 +4216,7 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点修改成员权限](#94-收货点修改成员权限modifymemberauthority)
+### 95. [收货点修改成员权限](#95-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4154,7 +4246,7 @@ authority为用户权限:
 ```
 
 ---
-### 95. [收货点通过手机号搜索成员](#95-收货点通过手机号搜索成员getmemberbyphone)
+### 96. [收货点通过手机号搜索成员](#96-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4183,18 +4275,18 @@ authority为用户权限:
 
 ---
 
-### 96. [用户协议](#96-用户协议user)
+### 97. [用户协议](#97-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 97. [获取软件许可协议](#97-获取软件许可协议software)
+### 98. [获取软件许可协议](#98-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 98. [关于](#98-关于about)
+### 99. [关于](#99-关于about)
 - `about`
 - url: `protocals/about.html`
