@@ -97,26 +97,25 @@
 ##### 87. [收货点下单(placeOrder)](#87-收货点下单)
 ##### 88. [收货点打印二维码(printBarCode)](#88-收货点打印二维码)
 ##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
-##### 90. [收货点代支付货单(proxyPayForOrderList)](#90-收货点代支付货单)
-##### 91. [收货点获取货单费用(getOrderFee)](#91-收货点获取货单费用)
-##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
-##### 93. [收货点获取订单(getOrders)](#93-收货点获取订单)
-##### 94. [收货点获取订单详情(getOrderDetail)](#94-收货点获取订单详情)
-##### 95. [收货点获取成员列表(getMemberList)](#95-收货点获取成员列表)
-##### 96. [收货点修改成员权限(modifyMemberAuthority)](#96-收货点修改成员权限)
-##### 97. [收货点通过手机号搜索成员(getMemberByPhone)](#97-收货点通过手机号搜索成员)
-##### 98. [收货点获取关联店铺列表(getReferShopList)](#98-收货点获取关联店铺列表)
-##### 99. [收货点设置关联店铺(setReferShop)](#99-收货点设置关联店铺)
-##### 100. [收货点添加区域的路线提成(addRegionProfit)](#100-收货点添加区域的路线提成)
-##### 101. [收货点获取区域的路线提成列表(getRegionProfitList)](#101-收货点获取区域的路线提成列表)
-##### 102. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#102-收货点获取区域的路线提成详情)
-##### 103. [收货点修改区域的路线提成(modifyRegionProfit)](#103-收货点修改区域的路线提成)
-##### 104. [收货点删除区域的路线提成(removeRegionProfit)](#104-收货点删除区域的路线提成)
-##### 105. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#105-收货点批量设置区域的路线提成)
+##### 90. [收货点代支付货单(confirmCachPayedForOrderList)](#90-收货点代支付货单)
+##### 91. [收货点获取未完成货单(getLastestOrder)](#91-收货点获取未完成货单)
+##### 92. [收货点获取订单(getOrders)](#92-收货点获取订单)
+##### 93. [收货点获取订单详情(getOrderDetail)](#93-收货点获取订单详情)
+##### 94. [收货点获取成员列表(getMemberList)](#94-收货点获取成员列表)
+##### 95. [收货点修改成员权限(modifyMemberAuthority)](#95-收货点修改成员权限)
+##### 96. [收货点通过手机号搜索成员(getMemberByPhone)](#96-收货点通过手机号搜索成员)
+##### 97. [收货点获取关联店铺列表(getReferShopList)](#97-收货点获取关联店铺列表)
+##### 98. [收货点设置关联店铺(setReferShop)](#98-收货点设置关联店铺)
+##### 99. [收货点添加区域的路线提成(addRegionProfit)](#99-收货点添加区域的路线提成)
+##### 100. [收货点获取区域的路线提成列表(getRegionProfitList)](#100-收货点获取区域的路线提成列表)
+##### 101. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#101-收货点获取区域的路线提成详情)
+##### 102. [收货点修改区域的路线提成(modifyRegionProfit)](#102-收货点修改区域的路线提成)
+##### 103. [收货点删除区域的路线提成(removeRegionProfit)](#103-收货点删除区域的路线提成)
+##### 104. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#104-收货点批量设置区域的路线提成)
 ## 协议文档
-##### 106. [用户协议(user)](#106-用户协议)
-##### 107. [获取软件许可协议(software)](#107-获取软件许可协议)
-##### 108. [关于(about)](#108-关于)
+##### 105. [用户协议(user)](#105-用户协议)
+##### 106. [获取软件许可协议(software)](#106-获取软件许可协议)
+##### 107. [关于(about)](#107-关于)
 
 ---
 
@@ -3924,7 +3923,7 @@ authority为用户权限:
     "receiveMemberId": "59df1048009deb7e9298e1eb",
     "placeOrderTime": "2017-10-12 16:06:36",
     "photo": "http://localhost:3000/api/image?id=59df22a4009deb7e9298e2de",
-    "modifyTime": "2017-10-31 08:57:21",
+    "modifyTime": "2017-11-02 11:51:16",
     "deductError": false,
     "roadmapId": "59df0d32009deb7e9298e1ca",
     "shipperChairManId": "59df0b1f009deb7e9298e19a",
@@ -3936,18 +3935,18 @@ authority为用户权限:
     "createTime": "2017-10-12 15:50:17",
     "stateList": [
       {
-        "state": 1,
+        "state": 3,
         "count": 2,
-        "_id": "59f7ca71d3aaa5190fe1060f"
+        "_id": "59fa96346137254a82861339"
       }
     ],
     "needPayInsuanceFee": 0,
-    "needPayTransportFee": 244,
+    "needPayTransportFee": 1300,
     "proxyChargeProfit": 10,
     "proxyCharge": 1000,
     "designatedFee": 0,
     "totalDesignatedFee": 20,
-    "realFee": 264,
+    "realFee": 1320,
     "branchProfit": 30.799999999999997,
     "masterProfit": 13.200000000000003,
     "profit": 44,
@@ -3966,11 +3965,12 @@ authority为用户权限:
     "sendDoorEndPointLastCode": 0,
     "isSendDoor": false,
     "endPointLastCode": 11,
+    "isCityDistribute": false,
     "startPointLastCode": 0,
     "isSenderRepresentShipper": true,
     "isTransferOrder": false,
     "id": "59df1eb9009deb7e9298e28f",
-    "state": 1
+    "state": 3
   }
 }
 ```
@@ -3994,8 +3994,8 @@ authority为用户权限:
 
 ---
 
-### 90. [收货点代支付货单](#90-收货点代支付货单proxypayfororderlist)
-- `proxyPayForOrderList`
+### 90. [收货点代支付货单](#90-收货点代支付货单confirmcachpayedfororderlist)
+- `confirmCachPayedForOrderList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
@@ -4011,28 +4011,7 @@ authority为用户权限:
 
 ---
 
-### 91. [收货点获取货单费用](#91-收货点获取货单费用getorderfee)
-- `getOrderFee`
-- 请求方式：`POST`
-
-| 参数名称 | 参数类型  | 描述 |
-| :- |:-:| :-:|
-| userId | ID | 用户Id |
-| orderId | ID | 货单Id |
-
-```js
-{
-  "success": true,
-  "context": {
-    "needPayTransportFee": 1200,
-    "needPayInsuanceFee": 120
-  }
-}
-```
-
----
-
-### 92. [收货点获取未完成货单](#92-收货点获取未完成货单getlastestorder)
+### 91. [收货点获取未完成货单](#91-收货点获取未完成货单getlastestorder)
 - `getLastestOrder`
 - 请求方式：`POST`
 
@@ -4042,59 +4021,69 @@ authority为用户权限:
 
 ```js
 {
-  "agentId": "59f698f70931cf0b4e8b5266",
-  "senderId": "59df087f009deb7e9298e16f",
-  "senderName": "fang1",
-  "senderPhone": "18083602719",
-  "receiverId": "59df0a26009deb7e9298e18f",
-  "receiverPhone": "18684165865",
-  "receiverName": "方运江",
-  "name": "腊肉",
-  "endPoint": "北京",
-  "sendDoorEndPoint": "东城区景山街道",
-  "placeOrderTime": "2017-10-30 16:35:02",
-  "createTime": "2017-10-30 16:35:02",
-  "stateList": [
-    {
-      "state": 0,
-      "count": 5,
-      "_id": "59f6e4361dc67612a47e3162"
-    }
-  ],
-  "needPayInsuanceFee": 0,
-  "needPayTransportFee": 0,
-  "proxyChargeProfit": 0,
-  "proxyCharge": 0,
-  "designatedFee": 0,
-  "totalDesignatedFee": 0,
-  "realFee": 0,
-  "branchProfit": 0,
-  "masterProfit": 0,
-  "profit": 0,
-  "fee": 0,
-  "payTool": 0,
-  "payMode": 0,
-  "isReachPay": false,
-  "insuanceFee": 0,
-  "insuanceMount": 0,
-  "isInsuance": false,
-  "size": 1,
-  "weight": 1,
-  "totalNumbers": 5,
-  "needBondAmount": 0,
-  "roadmapRankIndex": -1,
-  "sendDoorEndPointLastCode": 110101002,
-  "isSendDoor": true,
-  "endPointLastCode": 11,
-  "startPointLastCode": 0,
-  "isSenderRepresentShipper": false,
-  "isTransferOrder": false,
-  "id": "59f6e4361dc67612a47e3161"
+  "success": true,
+  "context": {
+    "senderId": "59fab1a1c651f44b1d891d28",
+    "senderName": "fang",
+    "senderPhone": "18085192480",
+    "receiverId": "59fab1a1c651f44b1d891d28",
+    "receiverPhone": "18085192480",
+    "receiverName": "fang",
+    "name": "腊肉",
+    "endPoint": "贵州遵义市湄潭县",
+    "sendDoorEndPoint": "湄江镇",
+    "receiveAgentMemberId": "59df0a26009deb7e9298e18f",
+    "placeOrderTime": "2017-11-02 13:48:17",
+    "createTime": "2017-11-02 13:48:17",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 1,
+        "_id": "59fab1a1c651f44b1d891d2a"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 1,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 520328100,
+    "isSendDoor": true,
+    "endPointLastCode": 520328,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59fab1a1c651f44b1d891d29",
+    "agent": {
+      "name": "18684165865收货点",
+      "address": "贵州省贵阳市云岩区",
+      "id": "59f698f70931cf0b4e8b5266"
+    },
+    "state": 0
+  }
 }
 ```
 
 ---
-### 93. [收货点获取订单](#93-收货点获取订单getorders)
+### 92. [收货点获取订单](#92-收货点获取订单getorders)
 - `getOrders`
 - 请求方式：`POST`
 
@@ -4110,23 +4099,23 @@ authority为用户权限:
   "success": true,
   "context": {
     "toprintbarcode": {
-      "count": 2,
+      "count": 1,
       "list": [
         {
-          "senderName": "fang1",
-          "senderPhone": "18083602719",
-          "receiverPhone": "18684165865",
-          "receiverName": "方运江",
+          "senderName": "fang",
+          "senderPhone": "18085192480",
+          "receiverPhone": "18085192480",
+          "receiverName": "fang",
           "name": "腊肉",
-          "endPoint": "北京",
-          "sendDoorEndPoint": "东城区景山街道",
-          "placeOrderTime": "2017-11-01 10:51:04",
-          "createTime": "2017-11-01 10:51:04",
+          "endPoint": "贵州遵义市湄潭县",
+          "sendDoorEndPoint": "湄江镇",
+          "placeOrderTime": "2017-11-02 13:48:17",
+          "createTime": "2017-11-02 13:48:17",
           "stateList": [
             {
               "state": 0,
-              "count": 5,
-              "_id": "59f936989db3a131c07c23f4"
+              "count": 1,
+              "_id": "59fab1a1c651f44b1d891d2a"
             }
           ],
           "needPayInsuanceFee": 0,
@@ -4136,39 +4125,10 @@ authority为用户权限:
           "payMode": 0,
           "size": 1,
           "weight": 1,
-          "totalNumbers": 5,
+          "totalNumbers": 1,
           "isSendDoor": true,
           "isCityDistribute": false,
-          "id": "59f936989db3a131c07c23f3"
-        },
-        {
-          "senderName": "fang1",
-          "senderPhone": "18083602719",
-          "receiverPhone": "18684165865",
-          "receiverName": "方运江",
-          "name": "腊肉",
-          "endPoint": "北京",
-          "sendDoorEndPoint": "东城区景山街道",
-          "placeOrderTime": "2017-10-30 16:35:02",
-          "createTime": "2017-10-30 16:35:02",
-          "stateList": [
-            {
-              "state": 0,
-              "count": 5,
-              "_id": "59f6e4361dc67612a47e3162"
-            }
-          ],
-          "needPayInsuanceFee": 0,
-          "needPayTransportFee": 0,
-          "proxyCharge": 0,
-          "totalDesignatedFee": 0,
-          "payMode": 0,
-          "size": 1,
-          "weight": 1,
-          "totalNumbers": 5,
-          "isSendDoor": true,
-          "isCityDistribute": false,
-          "id": "59f6e4361dc67612a47e3161"
+          "id": "59fab1a1c651f44b1d891d29"
         }
       ]
     },
@@ -4185,7 +4145,7 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点获取订单详情](#94-收货点获取订单详情getorderdetail)
+### 93. [收货点获取订单详情](#93-收货点获取订单详情getorderdetail)
 - `getOrderDetail`
 - 请求方式：`POST`
 
@@ -4257,7 +4217,7 @@ authority为用户权限:
 ```
 
 ---
-### 95. [收货点获取成员列表](#95-收货点获取成员列表getmemberlist)
+### 94. [收货点获取成员列表](#94-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4297,7 +4257,7 @@ authority为用户权限:
 ```
 
 ---
-### 96. [收货点修改成员权限](#96-收货点修改成员权限modifymemberauthority)
+### 95. [收货点修改成员权限](#95-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4327,7 +4287,7 @@ authority为用户权限:
 ```
 
 ---
-### 97. [收货点通过手机号搜索成员](#97-收货点通过手机号搜索成员getmemberbyphone)
+### 96. [收货点通过手机号搜索成员](#96-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4352,7 +4312,7 @@ authority为用户权限:
 ```
 
 ---
-### 98. [收货点获取关联店铺列表](#98-收货点获取关联店铺列表getrefershoplist)
+### 97. [收货点获取关联店铺列表](#97-收货点获取关联店铺列表getrefershoplist)
 - `getReferShopList`
 - 请求方式：`POST`
 
@@ -4439,7 +4399,7 @@ authority为用户权限:
 ```
 
 ---
-### 99. [收货点设置关联店铺](#99-收货点设置关联店铺setrefershop)
+### 98. [收货点设置关联店铺](#98-收货点设置关联店铺setrefershop)
 - `setReferShop`
 - 请求方式：`POST`
 
@@ -4455,7 +4415,7 @@ authority为用户权限:
 ```
 
 ---
-### 100. [收货点添加区域的路线提成](#100-收货点添加区域的路线提成addregionprofit)
+### 99. [收货点添加区域的路线提成](#99-收货点添加区域的路线提成addregionprofit)
 - `addRegionProfit`
 - 请求方式：`POST`
 
@@ -4486,7 +4446,7 @@ authority为用户权限:
 ```
 
 ---
-### 101. [收货点获取区域的路线提成列表](#101-收货点获取区域的路线提成列表getregionprofitlist)
+### 100. [收货点获取区域的路线提成列表](#100-收货点获取区域的路线提成列表getregionprofitlist)
 - `getRegionProfitList`
 - 请求方式：`POST`
 
@@ -4530,7 +4490,7 @@ authority为用户权限:
 ```
 
 ---
-### 102. [收货点获取区域的路线提成详情](#102-收货点获取区域的路线提成详情getregionprofitdetail)
+### 101. [收货点获取区域的路线提成详情](#101-收货点获取区域的路线提成详情getregionprofitdetail)
 - `getRegionProfitDetail`
 - 请求方式：`POST`
 
@@ -4558,7 +4518,7 @@ authority为用户权限:
 ```
 
 ---
-### 103. [收货点修改区域的路线提成](#103-收货点修改区域的路线提成modifyregionprofit)
+### 102. [收货点修改区域的路线提成](#102-收货点修改区域的路线提成modifyregionprofit)
 - `modifyRegionProfit`
 - 请求方式：`POST`
 
@@ -4591,7 +4551,7 @@ authority为用户权限:
 ```
 
 ---
-### 104. [收货点删除区域的路线提成](#104-收货点删除区域的路线提成removeregionprofit)
+### 103. [收货点删除区域的路线提成](#103-收货点删除区域的路线提成removeregionprofit)
 - `removeRegionProfit`
 - 请求方式：`POST`
 
@@ -4619,7 +4579,7 @@ authority为用户权限:
 ```
 
 ---
-### 105. [收货点批量设置区域的路线提成](#105-收货点批量设置区域的路线提成setregionprofitwithlist)
+### 104. [收货点批量设置区域的路线提成](#104-收货点批量设置区域的路线提成setregionprofitwithlist)
 - `setRegionProfitWithList`
 - 请求方式：`POST`
 
@@ -4641,18 +4601,18 @@ authority为用户权限:
 
 ---
 
-### 106. [用户协议](#106-用户协议user)
+### 105. [用户协议](#105-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 107. [获取软件许可协议](#107-获取软件许可协议software)
+### 106. [获取软件许可协议](#106-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 108. [关于](#108-关于about)
+### 107. [关于](#107-关于about)
 - `about`
 - url: `protocals/about.html`
