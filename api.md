@@ -105,10 +105,18 @@
 ##### 95. [收货点获取成员列表(getMemberList)](#95-收货点获取成员列表)
 ##### 96. [收货点修改成员权限(modifyMemberAuthority)](#96-收货点修改成员权限)
 ##### 97. [收货点通过手机号搜索成员(getMemberByPhone)](#97-收货点通过手机号搜索成员)
+##### 98. [收货点获取关联店铺列表(getReferShopList)](#98-收货点获取关联店铺列表)
+##### 99. [收货点设置关联店铺(setReferShop)](#99-收货点设置关联店铺)
+##### 100. [收货点设置关联店铺(addRegionProfit)](#100-收货点设置关联店铺)
+##### 101. [收货点获取区域的路线提成列表(getRegionProfitList)](#101-收货点获取区域的路线提成列表)
+##### 102. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#102-收货点获取区域的路线提成详情)
+##### 103. [收货点修改区域的路线提成详情(modifyRegionProfit)](#103-收货点修改区域的路线提成详情)
+##### 104. [收货点删除区域的路线提成详情(removeRegionProfit)](#104-收货点删除区域的路线提成详情)
+##### 105. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#105-收货点批量设置区域的路线提成)
 ## 协议文档
-##### 98. [用户协议(user)](#98-用户协议)
-##### 99. [获取软件许可协议(software)](#99-获取软件许可协议)
-##### 100. [关于(about)](#100-关于)
+##### 106. [用户协议(user)](#106-用户协议)
+##### 107. [获取软件许可协议(software)](#107-获取软件许可协议)
+##### 108. [关于(about)](#108-关于)
 
 ---
 
@@ -4344,22 +4352,307 @@ authority为用户权限:
 ```
 
 ---
+### 98. [收货点获取关联店铺列表](#98-收货点获取关联店铺列表getrefershoplist)
+- `getReferShopList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "branchShopList": [
+      {
+        "name": "15555555501",
+        "phoneList": "15555555501",
+        "address": "贵州省贵阳市云岩区黔灵山分店",
+        "location": [
+          106.70094,
+          26.605311
+        ],
+        "addressRegion": "贵州贵阳市市辖区",
+        "addressRegionLastCode": 520101,
+        "profitRate": 0.2,
+        "id": "59e426b1b6ee191fe5d4fbf8",
+        "chairMan": {
+          "phone": "15555555501",
+          "name": "程",
+          "id": "59e426b1b6ee191fe5d4fbf7"
+        }
+      },
+      {
+        "name": "北站分店",
+        "phoneList": "16666666601",
+        "address": "贵州省贵阳市乌当区贵阳北站",
+        "location": [
+          106.68309,
+          26.625563
+        ],
+        "profitRate": 0.2,
+        "id": "59e41c3cb6ee191fe5d4fbd4",
+        "chairMan": {
+          "phone": "16666666601",
+          "name": "程",
+          "id": "59e41c3cb6ee191fe5d4fbd3"
+        }
+      },
+      {
+        "name": "分店2",
+        "phoneList": "0851-86190987;18185192480",
+        "address": "湖北省十堰市竹溪县",
+        "location": [
+          109.657937,
+          32.171422
+        ],
+        "addressRegion": "湖北十堰市竹溪县",
+        "addressRegionLastCode": 420324,
+        "profitRate": 0.7,
+        "id": "59df4fdc975c7a2578e79674",
+        "chairMan": {
+          "phone": "15629000001",
+          "name": "陈方东",
+          "id": "59df4fdc975c7a2578e79673"
+        }
+      },
+      {
+        "name": "范家分店",
+        "phoneList": "0851-88622803",
+        "address": "贵州省贵阳市云岩区",
+        "location": [
+          106.709177,
+          26.629907
+        ],
+        "profitRate": 0.7,
+        "id": "59df08df009deb7e9298e176",
+        "chairMan": {
+          "phone": "13984387205",
+          "name": "范泽华",
+          "id": "59df08df009deb7e9298e175"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+### 100. [收货点设置关联店铺](#100-收货点设置关联店铺addregionprofit)
+- `setReferShop`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 店铺Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 100. [收货点设置关联店铺](#100-收货点设置关联店铺addregionprofit)
+- `addRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| region | String | 方向，如：北京 |
+| regionLastCode | number | 方向的最后一个code |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+| type | number | 类型，0：所有，1：长途，2：短途|
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "createTime": "2017-11-02 10:55:43",
+    "type": 0,
+    "profitCount": 0,
+    "profitRate": 0.3,
+    "regionLastCode": 14,
+    "id": "59fa892fa417a943de84d1a3",
+    "shop": null
+  }
+}
+```
+
+---
+### 101. [收货点获取区域的路线提成列表](#101-收货点获取区域的路线提成列表getregionprofitlist)
+- `getRegionProfitList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| keyword | String | 关键字 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 2,
+    "regionRateList": [
+      {
+        "shopId": null,
+        "createTime": "2017-11-02 10:53:33",
+        "type": 0,
+        "profitCount": 0,
+        "profitRate": 0.2,
+        "regionLastCode": 0,
+        "id": "59fa88ada417a943de84d1a1",
+        "shop": null
+      },
+      {
+        "shopId": null,
+        "region": "河北",
+        "createTime": "2017-11-02 10:55:43",
+        "type": 0,
+        "profitCount": 0,
+        "profitRate": 0.3,
+        "regionLastCode": 14,
+        "id": "59fa892fa417a943de84d1a3",
+        "shop": null
+      }
+    ]
+  }
+}
+```
+
+---
+### 102. [收货点获取区域的路线提成详情](#102-收货点获取区域的路线提成详情getregionprofitdetail)
+- `getRegionProfitDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "shopId": null,
+    "createTime": "2017-11-02 10:53:33",
+    "level": 1,
+    "type": 0,
+    "profitCount": 0,
+    "profitRate": 0.2,
+    "regionLastCode": 0,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 103. [收货点修改区域的路线提成详情](#103-收货点修改区域的路线提成详情modifyregionprofit)
+- `modifyRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+| region | String | 方向，如：北京 |
+| regionLastCode | number | 方向的最后一个code |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+| type | number | 类型，0：所有，1：长途，2：短途|
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "modifyTime": "2017-11-02 11:20:23",
+    "createTime": "2017-11-02 10:53:33",
+    "type": 0,
+    "profitCount": 4,
+    "profitRate": 0,
+    "regionLastCode": 15,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 104. [收货点删除区域的路线提成详情](#104-收货点删除区域的路线提成详情removeregionprofit)
+- `removeRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "modifyTime": "2017-11-02 11:20:23",
+    "createTime": "2017-11-02 10:53:33",
+    "type": 0,
+    "profitCount": 4,
+    "profitRate": 0,
+    "regionLastCode": 15,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 105. [收货点批量设置区域的路线提成](#105-收货点批量设置区域的路线提成setregionprofitwithlist)
+- `setRegionProfitWithList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionIdList | Array | 路线提成Id数组 |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 98. [用户协议](#98-用户协议user)
+### 106. [用户协议](#106-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 99. [获取软件许可协议](#99-获取软件许可协议software)
+### 107. [获取软件许可协议](#107-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 100. [关于](#100-关于about)
+### 108. [关于](#108-关于about)
 - `about`
 - url: `protocals/about.html`
