@@ -101,13 +101,14 @@
 ##### 91. [收货点获取货单费用(getOrderFee)](#91-收货点获取货单费用)
 ##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
 ##### 93. [收货点获取订单(getOrders)](#93-收货点获取订单)
-##### 94. [收货点获取成员列表(getMemberList)](#94-收货点获取成员列表)
-##### 95. [收货点修改成员权限(modifyMemberAuthority)](#95-收货点修改成员权限)
-##### 96. [收货点通过手机号搜索成员(getMemberByPhone)](#96-收货点通过手机号搜索成员)
+##### 94. [收货点获取订单(getOrderDetail)](#94-收货点获取订单)
+##### 95. [收货点获取成员列表(getMemberList)](#95-收货点获取成员列表)
+##### 96. [收货点修改成员权限(modifyMemberAuthority)](#96-收货点修改成员权限)
+##### 97. [收货点通过手机号搜索成员(getMemberByPhone)](#97-收货点通过手机号搜索成员)
 ## 协议文档
-##### 97. [用户协议(user)](#97-用户协议)
-##### 98. [获取软件许可协议(software)](#98-获取软件许可协议)
-##### 99. [关于(about)](#99-关于)
+##### 98. [用户协议(user)](#98-用户协议)
+##### 99. [获取软件许可协议(software)](#99-获取软件许可协议)
+##### 100. [关于(about)](#100-关于)
 
 ---
 
@@ -4085,7 +4086,7 @@ authority为用户权限:
 ```
 
 ---
-### 93. [收货点获取订单](#93-收货点获取订单getorders)
+### 94. [收货点获取订单](#94-收货点获取订单getorderdetail)
 - `getOrders`
 - 请求方式：`POST`
 
@@ -4176,7 +4177,79 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点获取成员列表](#94-收货点获取成员列表getmemberlist)
+### 94. [收货点获取订单](#94-收货点获取订单getorderdetail)
+- `getOrderDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "agent": {
+      "name": "18684165865收货点",
+      "address": "贵州省贵阳市云岩区",
+      "id": "59f698f70931cf0b4e8b5266"
+    },
+    "state": 0
+  }
+}
+```
+
+---
+### 95. [收货点获取成员列表](#95-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4216,7 +4289,7 @@ authority为用户权限:
 ```
 
 ---
-### 95. [收货点修改成员权限](#95-收货点修改成员权限modifymemberauthority)
+### 96. [收货点修改成员权限](#96-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4246,7 +4319,7 @@ authority为用户权限:
 ```
 
 ---
-### 96. [收货点通过手机号搜索成员](#96-收货点通过手机号搜索成员getmemberbyphone)
+### 97. [收货点通过手机号搜索成员](#97-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4275,18 +4348,18 @@ authority为用户权限:
 
 ---
 
-### 97. [用户协议](#97-用户协议user)
+### 98. [用户协议](#98-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 98. [获取软件许可协议](#98-获取软件许可协议software)
+### 99. [获取软件许可协议](#99-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 99. [关于](#99-关于about)
+### 100. [关于](#100-关于about)
 - `about`
 - url: `protocals/about.html`
