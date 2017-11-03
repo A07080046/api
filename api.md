@@ -4090,7 +4090,7 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| type | String | 类型 (toprintbarcode,topay,toprintbill)|
+| type | String | 类型 (topay(待支付),toprintbill(待打印货单),tosend(待发货),onway(运输中),success(已完成))|
 | pageNo | Number | 页码 |
 | pageSize | Number | 每一页大小 |
 
@@ -4098,7 +4098,7 @@ authority为用户权限:
 {
   "success": true,
   "context": {
-    "toprintbarcode": {
+    "topay": {
       "count": 1,
       "list": [
         {
@@ -4132,11 +4132,19 @@ authority为用户权限:
         }
       ]
     },
-    "topay": {
+    "toprintbill": {
       "count": 0,
       "list": []
     },
-    "toprintbill": {
+    "tosend": {
+      "count": 0,
+      "list": []
+    },
+    "onway": {
+      "count": 0,
+      "list": []
+    },
+    "success": {
       "count": 0,
       "list": []
     }
