@@ -95,27 +95,28 @@
 ## 收货点
 ##### 86. [收货点通过手机号获取预下单列表(getPreOrderList)](#86-收货点通过手机号获取预下单列表)
 ##### 87. [收货点下单(placeOrder)](#87-收货点下单)
-##### 88. [收货点打印二维码(printBarCode)](#88-收货点打印二维码)
-##### 89. [收货点打印二货单(printOrderListBill)](#89-收货点打印二货单)
-##### 90. [收货点代支付货单(confirmCachPayedForOrderList)](#90-收货点代支付货单)
-##### 91. [收货点获取未完成货单(getLastestOrder)](#91-收货点获取未完成货单)
-##### 92. [收货点获取订单(getOrders)](#92-收货点获取订单)
-##### 93. [收货点获取订单详情(getOrderDetail)](#93-收货点获取订单详情)
-##### 94. [收货点获取成员列表(getMemberList)](#94-收货点获取成员列表)
-##### 95. [收货点修改成员权限(modifyMemberAuthority)](#95-收货点修改成员权限)
-##### 96. [收货点通过手机号搜索成员(getMemberByPhone)](#96-收货点通过手机号搜索成员)
-##### 97. [收货点获取关联店铺列表(getReferShopList)](#97-收货点获取关联店铺列表)
-##### 98. [收货点设置关联店铺(setReferShop)](#98-收货点设置关联店铺)
-##### 99. [收货点添加区域的路线提成(addRegionProfit)](#99-收货点添加区域的路线提成)
-##### 100. [收货点获取区域的路线提成列表(getRegionProfitList)](#100-收货点获取区域的路线提成列表)
-##### 101. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#101-收货点获取区域的路线提成详情)
-##### 102. [收货点修改区域的路线提成(modifyRegionProfit)](#102-收货点修改区域的路线提成)
-##### 103. [收货点删除区域的路线提成(removeRegionProfit)](#103-收货点删除区域的路线提成)
-##### 104. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#104-收货点批量设置区域的路线提成)
+##### 88. [收货点修改货单(modifyOrder)](#88-收货点修改货单)
+##### 89. [收货点打印二维码(printBarCode)](#89-收货点打印二维码)
+##### 90. [收货点打印二货单(printOrderListBill)](#90-收货点打印二货单)
+##### 91. [收货点代支付货单(confirmCachPayedForOrderList)](#91-收货点代支付货单)
+##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
+##### 93. [收货点获取订单(getOrders)](#93-收货点获取订单)
+##### 94. [收货点获取订单详情(getOrderDetail)](#94-收货点获取订单详情)
+##### 95. [收货点获取成员列表(getMemberList)](#95-收货点获取成员列表)
+##### 96. [收货点修改成员权限(modifyMemberAuthority)](#96-收货点修改成员权限)
+##### 97. [收货点通过手机号搜索成员(getMemberByPhone)](#97-收货点通过手机号搜索成员)
+##### 98. [收货点获取关联店铺列表(getReferShopList)](#98-收货点获取关联店铺列表)
+##### 99. [收货点设置关联店铺(setReferShop)](#99-收货点设置关联店铺)
+##### 100. [收货点添加区域的路线提成(addRegionProfit)](#100-收货点添加区域的路线提成)
+##### 101. [收货点获取区域的路线提成列表(getRegionProfitList)](#101-收货点获取区域的路线提成列表)
+##### 102. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#102-收货点获取区域的路线提成详情)
+##### 103. [收货点修改区域的路线提成(modifyRegionProfit)](#103-收货点修改区域的路线提成)
+##### 104. [收货点删除区域的路线提成(removeRegionProfit)](#104-收货点删除区域的路线提成)
+##### 105. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#105-收货点批量设置区域的路线提成)
 ## 协议文档
-##### 105. [用户协议(user)](#105-用户协议)
-##### 106. [获取软件许可协议(software)](#106-获取软件许可协议)
-##### 107. [关于(about)](#107-关于)
+##### 106. [用户协议(user)](#106-用户协议)
+##### 107. [获取软件许可协议(software)](#107-获取软件许可协议)
+##### 108. [关于(about)](#108-关于)
 
 ---
 
@@ -3895,7 +3896,92 @@ authority为用户权限:
 
 ---
 
-### 88. [收货点打印二维码](#88-收货点打印二维码printbarcode)
+### 88. [收货点修改货单](#88-收货点修改货单modifyorder)
+- `modifyOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| senderPhone | String | 发货人手机号|
+| senderName | String | 发货人姓名|
+| receiverPhone | String | 收货人手机号|
+| receiverName | String | 收货人姓名|
+| endPoint | String | 终点|
+| endPointLastCode | Number | 编码|
+| sendDoorEndPoint | String | 送货上门终点|
+| sendDoorEndPointLastCode | Number | 送货上门终点编码|
+| name | String | 货物名|
+| totalNumbers | Number | 总件数 |
+| weight | Number | 重量 |
+| size | Number | 方量 |
+| isSendDoor | Bool | 是否送货上门 |
+| isReachPay | Bool | 是否到付 |
+| proxyCharge | Number | 代收货款金额 |
+| insuanceMount | Number | 保险 |
+| totalDesignatedFee | Number | 指定收款金额 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "state": 0
+  }
+}
+```
+
+---
+
+### 89. [收货点打印二维码](#89-收货点打印二维码printbarcode)
 - `printBarCode`
 - 请求方式：`POST`
 
@@ -3977,7 +4063,7 @@ authority为用户权限:
 
 ---
 
-### 89. [收货点打印二货单](#89-收货点打印二货单printorderlistbill)
+### 90. [收货点打印二货单](#90-收货点打印二货单printorderlistbill)
 - `printOrderListBill`
 - 请求方式：`POST`
 
@@ -3994,7 +4080,7 @@ authority为用户权限:
 
 ---
 
-### 90. [收货点代支付货单](#90-收货点代支付货单confirmcachpayedfororderlist)
+### 91. [收货点代支付货单](#91-收货点代支付货单confirmcachpayedfororderlist)
 - `confirmCachPayedForOrderList`
 - 请求方式：`POST`
 
@@ -4011,7 +4097,7 @@ authority为用户权限:
 
 ---
 
-### 91. [收货点获取未完成货单](#91-收货点获取未完成货单getlastestorder)
+### 92. [收货点获取未完成货单](#92-收货点获取未完成货单getlastestorder)
 - `getLastestOrder`
 - 请求方式：`POST`
 
@@ -4083,7 +4169,7 @@ authority为用户权限:
 ```
 
 ---
-### 92. [收货点获取订单](#92-收货点获取订单getorders)
+### 93. [收货点获取订单](#93-收货点获取订单getorders)
 - `getOrders`
 - 请求方式：`POST`
 
@@ -4153,7 +4239,7 @@ authority为用户权限:
 ```
 
 ---
-### 93. [收货点获取订单详情](#93-收货点获取订单详情getorderdetail)
+### 94. [收货点获取订单详情](#94-收货点获取订单详情getorderdetail)
 - `getOrderDetail`
 - 请求方式：`POST`
 
@@ -4225,7 +4311,7 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点获取成员列表](#94-收货点获取成员列表getmemberlist)
+### 95. [收货点获取成员列表](#95-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4265,7 +4351,7 @@ authority为用户权限:
 ```
 
 ---
-### 95. [收货点修改成员权限](#95-收货点修改成员权限modifymemberauthority)
+### 96. [收货点修改成员权限](#96-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4295,7 +4381,7 @@ authority为用户权限:
 ```
 
 ---
-### 96. [收货点通过手机号搜索成员](#96-收货点通过手机号搜索成员getmemberbyphone)
+### 97. [收货点通过手机号搜索成员](#97-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4320,7 +4406,7 @@ authority为用户权限:
 ```
 
 ---
-### 97. [收货点获取关联店铺列表](#97-收货点获取关联店铺列表getrefershoplist)
+### 98. [收货点获取关联店铺列表](#98-收货点获取关联店铺列表getrefershoplist)
 - `getReferShopList`
 - 请求方式：`POST`
 
@@ -4407,7 +4493,7 @@ authority为用户权限:
 ```
 
 ---
-### 98. [收货点设置关联店铺](#98-收货点设置关联店铺setrefershop)
+### 99. [收货点设置关联店铺](#99-收货点设置关联店铺setrefershop)
 - `setReferShop`
 - 请求方式：`POST`
 
@@ -4423,7 +4509,7 @@ authority为用户权限:
 ```
 
 ---
-### 99. [收货点添加区域的路线提成](#99-收货点添加区域的路线提成addregionprofit)
+### 100. [收货点添加区域的路线提成](#100-收货点添加区域的路线提成addregionprofit)
 - `addRegionProfit`
 - 请求方式：`POST`
 
@@ -4454,7 +4540,7 @@ authority为用户权限:
 ```
 
 ---
-### 100. [收货点获取区域的路线提成列表](#100-收货点获取区域的路线提成列表getregionprofitlist)
+### 101. [收货点获取区域的路线提成列表](#101-收货点获取区域的路线提成列表getregionprofitlist)
 - `getRegionProfitList`
 - 请求方式：`POST`
 
@@ -4498,7 +4584,7 @@ authority为用户权限:
 ```
 
 ---
-### 101. [收货点获取区域的路线提成详情](#101-收货点获取区域的路线提成详情getregionprofitdetail)
+### 102. [收货点获取区域的路线提成详情](#102-收货点获取区域的路线提成详情getregionprofitdetail)
 - `getRegionProfitDetail`
 - 请求方式：`POST`
 
@@ -4526,7 +4612,7 @@ authority为用户权限:
 ```
 
 ---
-### 102. [收货点修改区域的路线提成](#102-收货点修改区域的路线提成modifyregionprofit)
+### 103. [收货点修改区域的路线提成](#103-收货点修改区域的路线提成modifyregionprofit)
 - `modifyRegionProfit`
 - 请求方式：`POST`
 
@@ -4559,7 +4645,7 @@ authority为用户权限:
 ```
 
 ---
-### 103. [收货点删除区域的路线提成](#103-收货点删除区域的路线提成removeregionprofit)
+### 104. [收货点删除区域的路线提成](#104-收货点删除区域的路线提成removeregionprofit)
 - `removeRegionProfit`
 - 请求方式：`POST`
 
@@ -4587,7 +4673,7 @@ authority为用户权限:
 ```
 
 ---
-### 104. [收货点批量设置区域的路线提成](#104-收货点批量设置区域的路线提成setregionprofitwithlist)
+### 105. [收货点批量设置区域的路线提成](#105-收货点批量设置区域的路线提成setregionprofitwithlist)
 - `setRegionProfitWithList`
 - 请求方式：`POST`
 
@@ -4609,18 +4695,18 @@ authority为用户权限:
 
 ---
 
-### 105. [用户协议](#105-用户协议user)
+### 106. [用户协议](#106-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 106. [获取软件许可协议](#106-获取软件许可协议software)
+### 107. [获取软件许可协议](#107-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 107. [关于](#107-关于about)
+### 108. [关于](#108-关于about)
 - `about`
 - url: `protocals/about.html`
