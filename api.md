@@ -26,8 +26,8 @@
 ##### 23. [货主获取货单详情(getOrderDetail)](#23-货主获取货单详情)
 ##### 24. [货主修改预下单货单(modifyPreOrder)](#24-货主修改预下单货单)
 ##### 25. [货主删除预下单货单(removePreOrder)](#25-货主删除预下单货单)
-##### 26. [货主通过分店发货线上支付(货单无agent)(payForOrderWhenSend)](#26-货主通过分店发货线上支付(货单无agent))
-##### 27. [货主通过收货点发货线上支付(货单有agent)(payAgentForOrder)](#27-货主通过收货点发货线上支付(货单有agent))
+##### 26. [货主通过分店发货线上支付(payForOrderWhenSend)](#26-货主通过分店发货线上支付)
+##### 27. [货主通过收货点发货线上支付(payAgentForOrder)](#27-货主通过收货点发货线上支付)
 ##### 28. [货主结束货单现金支付(finishOrder)](#28-货主结束货单现金支付)
 ##### 29. [货主结束货单线上支付(payForOrderWhenReceive)](#29-货主结束货单线上支付)
 ##### 30. [获取订单物流信息(getLogisticsList)](#30-获取订单物流信息)
@@ -1091,7 +1091,7 @@ authority为用户权限:
 ```
 
 ---
-### 26. [货主通过分店发货线上支付(货单无agent)](#26-货主通过分店发货线上支付(货单无agent)payfororderwhensend)
+### 26. [货主通过分店发货线上支付](#26-货主通过分店发货线上支付payfororderwhensend)
 - `payForOrderWhenSend`
 - 请求方式：`POST`
 
@@ -1108,7 +1108,7 @@ authority为用户权限:
 ```
 
 ---
-### 27. [货主通过收货点发货线上支付(货单有agent)](#27-货主通过收货点发货线上支付(货单有agent)payagentfororder)
+### 27. [货主通过收货点发货线上支付](#27-货主通过收货点发货线上支付payagentfororder)
 - `payAgentForOrder`
 - 请求方式：`POST`
 
