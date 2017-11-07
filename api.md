@@ -2395,7 +2395,7 @@ authority为用户权限:
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | roadmapIdList | Array | 路线Id列表 |
-| typeList | Array | 修改类型列表（0：长途运费单价  1：长途运费起价  2：送货上门单价  3：送货上门起价） |
+| typeList | Array | 修改类型列表（0：长途运费单价  1：长途运费起价 ） |
 | mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
 | value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
 
