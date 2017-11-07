@@ -68,55 +68,59 @@
 ##### 60. [物流公司修改路线(modifyRoadmap)](#60-物流公司修改路线)
 ##### 61. [物流公司删除路线(removeRoadmap)](#61-物流公司删除路线)
 ##### 62. [物流公司修改路线价格(setRoadmapPrice)](#62-物流公司修改路线价格)
-##### 63. [物流公司获取路线列表(getRoadmapList)](#63-物流公司获取路线列表)
-##### 64. [物流公司获取路线详情(getRoadmapDetail)](#64-物流公司获取路线详情)
-##### 65. [货主获取分店路线列表(getRoadmapListInShop)](#65-货主获取分店路线列表)
-##### 66. [货主获取收货点路线列表(getRoadmapListInAgent)](#66-货主获取收货点路线列表)
-##### 67. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#67-通过预下单群组id获取路线行情)
-##### 68. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#68-通过预下单id获取路线行情)
-##### 69. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#69-通过终点获取路线行情)
-##### 70. [修改预下单群组详情(modifyPreOrderGroup)](#70-修改预下单群组详情)
-##### 71. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#71-获取预下单群组中的预下单列表)
+##### 63. [物流公司修改路线对应送货上门路线价格(setRoadmapSendDoorPrice)](#63-物流公司修改路线对应送货上门路线价格)
+##### 64. [物流公司修改路线对应送货上门路线底格(setRoadmapSendDoorBasePrice)](#64-物流公司修改路线对应送货上门路线底格)
+##### 65. [物流公司修改路线是否上线(setRoadmapEnable)](#65-物流公司修改路线是否上线)
+##### 66. [物流公司修改路线对应的送货上门路线是否上线(setRoadmapSendDoorEnable)](#66-物流公司修改路线对应的送货上门路线是否上线)
+##### 67. [物流公司获取路线列表(getRoadmapList)](#67-物流公司获取路线列表)
+##### 68. [物流公司获取路线详情(getRoadmapDetail)](#68-物流公司获取路线详情)
+##### 69. [货主获取分店路线列表(getRoadmapListInShop)](#69-货主获取分店路线列表)
+##### 70. [货主获取收货点路线列表(getRoadmapListInAgent)](#70-货主获取收货点路线列表)
+##### 71. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#71-通过预下单群组id获取路线行情)
+##### 72. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#72-通过预下单id获取路线行情)
+##### 73. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#73-通过终点获取路线行情)
+##### 74. [修改预下单群组详情(modifyPreOrderGroup)](#74-修改预下单群组详情)
+##### 75. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#75-获取预下单群组中的预下单列表)
 ## 分店api
-##### 72. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#72-收货部获取需要上传照片的订单)
-##### 73. [收货部为货单上传照片(setPhotoForOriginOrder)](#73-收货部为货单上传照片)
-##### 74. [收货部为货单下中转单(placeTransferOrder)](#74-收货部为货单下中转单)
-##### 75. [收货部获取货单详情(getOrderDetailByReceivePartment)](#75-收货部获取货单详情)
-##### 76. [收货部获取订单(getOrdersByReceivePartment)](#76-收货部获取订单)
-##### 77. [库管部获取订单(getOrdersByWareHousePartment)](#77-库管部获取订单)
-##### 78. [库管部获取正在装车的订单列表(getLoadingOrderList)](#78-库管部获取正在装车的订单列表)
-##### 79. [库管部扫描入库(placeStorage)](#79-库管部扫描入库)
-##### 80. [保安部检查卡车状态(checkTruckPass)](#80-保安部检查卡车状态)
-##### 81. [分店获取成员列表(getMemberList)](#81-分店获取成员列表)
-##### 82. [分店创建成员(createMember)](#82-分店创建成员)
-##### 83. [分店创建成员(modifyMember)](#83-分店创建成员)
-##### 84. [分店获取部门信息(getOwnPartmentInfo)](#84-分店获取部门信息)
-##### 85. [获取统计信息(getStatistics)](#85-获取统计信息)
+##### 76. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#76-收货部获取需要上传照片的订单)
+##### 77. [收货部为货单上传照片(setPhotoForOriginOrder)](#77-收货部为货单上传照片)
+##### 78. [收货部为货单下中转单(placeTransferOrder)](#78-收货部为货单下中转单)
+##### 79. [收货部获取货单详情(getOrderDetailByReceivePartment)](#79-收货部获取货单详情)
+##### 80. [收货部获取订单(getOrdersByReceivePartment)](#80-收货部获取订单)
+##### 81. [库管部获取订单(getOrdersByWareHousePartment)](#81-库管部获取订单)
+##### 82. [库管部获取正在装车的订单列表(getLoadingOrderList)](#82-库管部获取正在装车的订单列表)
+##### 83. [库管部扫描入库(placeStorage)](#83-库管部扫描入库)
+##### 84. [保安部检查卡车状态(checkTruckPass)](#84-保安部检查卡车状态)
+##### 85. [分店获取成员列表(getMemberList)](#85-分店获取成员列表)
+##### 86. [分店创建成员(createMember)](#86-分店创建成员)
+##### 87. [分店创建成员(modifyMember)](#87-分店创建成员)
+##### 88. [分店获取部门信息(getOwnPartmentInfo)](#88-分店获取部门信息)
+##### 89. [获取统计信息(getStatistics)](#89-获取统计信息)
 ## 收货点
-##### 86. [收货点通过手机号获取预下单列表(getPreOrderList)](#86-收货点通过手机号获取预下单列表)
-##### 87. [收货点下单(placeOrder)](#87-收货点下单)
-##### 88. [收货点修改货单(modifyOrder)](#88-收货点修改货单)
-##### 89. [收货点打印二维码(printBarCode)](#89-收货点打印二维码)
-##### 90. [收货点打印二货单(printOrderListBill)](#90-收货点打印二货单)
-##### 91. [收货点代支付货单(confirmCachPayedForOrderList)](#91-收货点代支付货单)
-##### 92. [收货点获取未完成货单(getLastestOrder)](#92-收货点获取未完成货单)
-##### 93. [收货点获取订单(getOrders)](#93-收货点获取订单)
-##### 94. [收货点获取订单详情(getOrderDetail)](#94-收货点获取订单详情)
-##### 95. [收货点获取成员列表(getMemberList)](#95-收货点获取成员列表)
-##### 96. [收货点修改成员权限(modifyMemberAuthority)](#96-收货点修改成员权限)
-##### 97. [收货点通过手机号搜索成员(getMemberByPhone)](#97-收货点通过手机号搜索成员)
-##### 98. [收货点获取关联店铺列表(getReferShopList)](#98-收货点获取关联店铺列表)
-##### 99. [收货点设置关联店铺(setReferShop)](#99-收货点设置关联店铺)
-##### 100. [收货点添加区域的路线提成(addRegionProfit)](#100-收货点添加区域的路线提成)
-##### 101. [收货点获取区域的路线提成列表(getRegionProfitList)](#101-收货点获取区域的路线提成列表)
-##### 102. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#102-收货点获取区域的路线提成详情)
-##### 103. [收货点修改区域的路线提成(modifyRegionProfit)](#103-收货点修改区域的路线提成)
-##### 104. [收货点删除区域的路线提成(removeRegionProfit)](#104-收货点删除区域的路线提成)
-##### 105. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#105-收货点批量设置区域的路线提成)
+##### 90. [收货点通过手机号获取预下单列表(getPreOrderList)](#90-收货点通过手机号获取预下单列表)
+##### 91. [收货点下单(placeOrder)](#91-收货点下单)
+##### 92. [收货点修改货单(modifyOrder)](#92-收货点修改货单)
+##### 93. [收货点打印二维码(printBarCode)](#93-收货点打印二维码)
+##### 94. [收货点打印二货单(printOrderListBill)](#94-收货点打印二货单)
+##### 95. [收货点代支付货单(confirmCachPayedForOrderList)](#95-收货点代支付货单)
+##### 96. [收货点获取未完成货单(getLastestOrder)](#96-收货点获取未完成货单)
+##### 97. [收货点获取订单(getOrders)](#97-收货点获取订单)
+##### 98. [收货点获取订单详情(getOrderDetail)](#98-收货点获取订单详情)
+##### 99. [收货点获取成员列表(getMemberList)](#99-收货点获取成员列表)
+##### 100. [收货点修改成员权限(modifyMemberAuthority)](#100-收货点修改成员权限)
+##### 101. [收货点通过手机号搜索成员(getMemberByPhone)](#101-收货点通过手机号搜索成员)
+##### 102. [收货点获取关联店铺列表(getReferShopList)](#102-收货点获取关联店铺列表)
+##### 103. [收货点设置关联店铺(setReferShop)](#103-收货点设置关联店铺)
+##### 104. [收货点添加区域的路线提成(addRegionProfit)](#104-收货点添加区域的路线提成)
+##### 105. [收货点获取区域的路线提成列表(getRegionProfitList)](#105-收货点获取区域的路线提成列表)
+##### 106. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#106-收货点获取区域的路线提成详情)
+##### 107. [收货点修改区域的路线提成(modifyRegionProfit)](#107-收货点修改区域的路线提成)
+##### 108. [收货点删除区域的路线提成(removeRegionProfit)](#108-收货点删除区域的路线提成)
+##### 109. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#109-收货点批量设置区域的路线提成)
 ## 协议文档
-##### 106. [用户协议(user)](#106-用户协议)
-##### 107. [获取软件许可协议(software)](#107-获取软件许可协议)
-##### 108. [关于(about)](#108-关于)
+##### 110. [用户协议(user)](#110-用户协议)
+##### 111. [获取软件许可协议(software)](#111-获取软件许可协议)
+##### 112. [关于(about)](#112-关于)
 
 ---
 
@@ -2400,8 +2404,84 @@ authority为用户权限:
   "success": true
 }
 ```
+
 ---
-### 63. [物流公司获取路线列表](#63-物流公司获取路线列表getroadmaplist)
+### 63. [物流公司修改路线对应送货上门路线价格](#63-物流公司修改路线对应送货上门路线价格setroadmapsenddoorprice)
+- `setRoadmapSendDoorPrice`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| typeList | Array | 数组，0：送货上门单价  1：送货上门起价 |
+| mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
+| value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 64. [物流公司修改路线对应送货上门路线底格](#64-物流公司修改路线对应送货上门路线底格setroadmapsenddoorbaseprice)
+- `setRoadmapSendDoorBasePrice`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| typeList | Array | 数组，0：同城配送运费单价的底价  1：同城配送运费起价的底价 |
+| mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
+| value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 65. [物流公司修改路线是否上线](#65-物流公司修改路线是否上线setroadmapenable)
+- `setRoadmapEnable`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapIdList | Array | 路线Id列表 |
+| enable | Boolean | 是否上线 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 66. [物流公司修改路线对应的送货上门路线是否上线](#66-物流公司修改路线对应的送货上门路线是否上线setroadmapsenddoorenable)
+- `setRoadmapSendDoorEnable`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| enable | Boolean | 是否上线 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 67. [物流公司获取路线列表](#67-物流公司获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -2436,7 +2516,7 @@ authority为用户权限:
 ```
 
 ---
-### 64. [物流公司获取路线详情](#64-物流公司获取路线详情getroadmapdetail)
+### 68. [物流公司获取路线详情](#68-物流公司获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -2484,7 +2564,7 @@ authority为用户权限:
 ```
 
 ---
-### 65. [货主获取分店路线列表](#65-货主获取分店路线列表getroadmaplistinshop)
+### 69. [货主获取分店路线列表](#69-货主获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -2542,7 +2622,7 @@ authority为用户权限:
 ```
 
 ---
-### 66. [货主获取收货点路线列表](#66-货主获取收货点路线列表getroadmaplistinagent)
+### 70. [货主获取收货点路线列表](#70-货主获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -2599,7 +2679,7 @@ authority为用户权限:
 ```
 
 ---
-### 67. [通过预下单群组id获取路线行情](#67-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
+### 71. [通过预下单群组id获取路线行情](#71-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
 - `getRoadmapListWithPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2648,7 +2728,7 @@ authority为用户权限:
 ```
 
 ---
-### 68. [通过预下单id获取路线行情](#68-通过预下单id获取路线行情getroadmaplistwithpreorder)
+### 72. [通过预下单id获取路线行情](#72-通过预下单id获取路线行情getroadmaplistwithpreorder)
 - `getRoadmapListWithPreOrder`
 - 请求方式：`POST`
 
@@ -2672,7 +2752,7 @@ authority为用户权限:
 ```
 
 ---
-### 69. [通过终点获取路线行情](#69-通过终点获取路线行情getroadmaplistwithendpoint)
+### 73. [通过终点获取路线行情](#73-通过终点获取路线行情getroadmaplistwithendpoint)
 - `getRoadmapListWithEndPoint`
 - 请求方式：`POST`
 
@@ -2717,7 +2797,7 @@ authority为用户权限:
 ```
 
 ---
-### 70. [修改预下单群组详情](#70-修改预下单群组详情modifypreordergroup)
+### 74. [修改预下单群组详情](#74-修改预下单群组详情modifypreordergroup)
 - `modifyPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2737,7 +2817,7 @@ authority为用户权限:
 ```
 
 ---
-### 71. [获取预下单群组中的预下单列表](#71-获取预下单群组中的预下单列表getpreorderlistingroup)
+### 75. [获取预下单群组中的预下单列表](#75-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 
@@ -2784,7 +2864,7 @@ authority为用户权限:
 ## 分店api
 
 ---
-### 72. [收货部获取需要上传照片的订单](#72-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
+### 76. [收货部获取需要上传照片的订单](#76-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
 - `getLastestOrderByReceivePartment`
 - 请求方式：`POST`
 
@@ -2847,7 +2927,7 @@ authority为用户权限:
 ```
 
 ---
-### 73. [收货部为货单上传照片](#73-收货部为货单上传照片setphotofororiginorder)
+### 77. [收货部为货单上传照片](#77-收货部为货单上传照片setphotofororiginorder)
 - `setPhotoForOriginOrder`
 - 请求方式：`POST`
 
@@ -2864,7 +2944,7 @@ authority为用户权限:
 ```
 
 ---
-### 74. [收货部为货单下中转单](#74-收货部为货单下中转单placetransferorder)
+### 78. [收货部为货单下中转单](#78-收货部为货单下中转单placetransferorder)
 - `placeTransferOrder`
 - 请求方式：`POST`
 
@@ -2926,7 +3006,7 @@ authority为用户权限:
 ```
 
 ---
-### 75. [收货部获取货单详情](#75-收货部获取货单详情getorderdetailbyreceivepartment)
+### 79. [收货部获取货单详情](#79-收货部获取货单详情getorderdetailbyreceivepartment)
 - `getOrderDetailByReceivePartment`
 - 请求方式：`POST`
 
@@ -2991,7 +3071,7 @@ authority为用户权限:
 ```
 
 ---
-### 76. [收货部获取订单](#76-收货部获取订单getordersbyreceivepartment)
+### 80. [收货部获取订单](#80-收货部获取订单getordersbyreceivepartment)
 - `getOrdersByReceivePartment`
 - 请求方式：`POST`
 
@@ -3195,7 +3275,7 @@ authority为用户权限:
 
 ```
 ---
-### 77. [库管部获取订单](#77-库管部获取订单getordersbywarehousepartment)
+### 81. [库管部获取订单](#81-库管部获取订单getordersbywarehousepartment)
 - `getOrdersByWareHousePartment`
 - 请求方式：`POST`
 
@@ -3339,7 +3419,7 @@ authority为用户权限:
 }
 ```
 ---
-### 78. [库管部获取正在装车的订单列表](#78-库管部获取正在装车的订单列表getloadingorderlist)
+### 82. [库管部获取正在装车的订单列表](#82-库管部获取正在装车的订单列表getloadingorderlist)
 - `getLoadingOrderList`
 - 请求方式：`POST`
 
@@ -3422,7 +3502,7 @@ authority为用户权限:
 ```
 
 ---
-### 79. [库管部扫描入库](#79-库管部扫描入库placestorage)
+### 83. [库管部扫描入库](#83-库管部扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -3488,7 +3568,7 @@ authority为用户权限:
 }
 ```
 
-### 80. [保安部检查卡车状态](#80-保安部检查卡车状态checktruckpass)
+### 84. [保安部检查卡车状态](#84-保安部检查卡车状态checktruckpass)
 - `checkTruckPass`
 - 请求方式：`POST`
 
@@ -3520,7 +3600,7 @@ authority为用户权限:
 }
 ```
 
-### 81. [分店获取成员列表](#81-分店获取成员列表getmemberlist)
+### 85. [分店获取成员列表](#85-分店获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -3567,7 +3647,7 @@ authority为用户权限:
 }
 ```
 
-### 83. [分店创建成员](#83-分店创建成员modifymember)
+### 87. [分店创建成员](#87-分店创建成员modifymember)
 - `createMember`
 - 请求方式：`POST`
 
@@ -3593,7 +3673,7 @@ authority为用户权限:
 }
 ```
 
-### 83. [分店创建成员](#83-分店创建成员modifymember)
+### 87. [分店创建成员](#87-分店创建成员modifymember)
 - `modifyMember`
 - 请求方式：`POST`
 
@@ -3620,7 +3700,7 @@ authority为用户权限:
 }
 ```
 
-### 84. [分店获取部门信息](#84-分店获取部门信息getownpartmentinfo)
+### 88. [分店获取部门信息](#88-分店获取部门信息getownpartmentinfo)
 - `getOwnPartmentInfo`
 - 请求方式：`POST`
 
@@ -3653,7 +3733,7 @@ authority为用户权限:
 
 ---
 
-### 85. [获取统计信息](#85-获取统计信息getstatistics)
+### 89. [获取统计信息](#89-获取统计信息getstatistics)
 - `getStatistics`
 - 请求方式：`POST`
 
@@ -3687,7 +3767,7 @@ authority为用户权限:
 
 ---
 
-### 86. [收货点通过手机号获取预下单列表](#86-收货点通过手机号获取预下单列表getpreorderlist)
+### 90. [收货点通过手机号获取预下单列表](#90-收货点通过手机号获取预下单列表getpreorderlist)
 - `getPreOrderList`
 - 请求方式：`POST`
 
@@ -3812,7 +3892,7 @@ authority为用户权限:
 
 ---
 
-### 87. [收货点下单](#87-收货点下单placeorder)
+### 91. [收货点下单](#91-收货点下单placeorder)
 - `placeOrder`
 - 请求方式：`POST`
 
@@ -3896,7 +3976,7 @@ authority为用户权限:
 
 ---
 
-### 88. [收货点修改货单](#88-收货点修改货单modifyorder)
+### 92. [收货点修改货单](#92-收货点修改货单modifyorder)
 - `modifyOrder`
 - 请求方式：`POST`
 
@@ -3981,7 +4061,7 @@ authority为用户权限:
 
 ---
 
-### 89. [收货点打印二维码](#89-收货点打印二维码printbarcode)
+### 93. [收货点打印二维码](#93-收货点打印二维码printbarcode)
 - `printBarCode`
 - 请求方式：`POST`
 
@@ -4063,7 +4143,7 @@ authority为用户权限:
 
 ---
 
-### 90. [收货点打印二货单](#90-收货点打印二货单printorderlistbill)
+### 94. [收货点打印二货单](#94-收货点打印二货单printorderlistbill)
 - `printOrderListBill`
 - 请求方式：`POST`
 
@@ -4080,7 +4160,7 @@ authority为用户权限:
 
 ---
 
-### 91. [收货点代支付货单](#91-收货点代支付货单confirmcachpayedfororderlist)
+### 95. [收货点代支付货单](#95-收货点代支付货单confirmcachpayedfororderlist)
 - `confirmCachPayedForOrderList`
 - 请求方式：`POST`
 
@@ -4097,7 +4177,7 @@ authority为用户权限:
 
 ---
 
-### 92. [收货点获取未完成货单](#92-收货点获取未完成货单getlastestorder)
+### 96. [收货点获取未完成货单](#96-收货点获取未完成货单getlastestorder)
 - `getLastestOrder`
 - 请求方式：`POST`
 
@@ -4169,7 +4249,7 @@ authority为用户权限:
 ```
 
 ---
-### 93. [收货点获取订单](#93-收货点获取订单getorders)
+### 97. [收货点获取订单](#97-收货点获取订单getorders)
 - `getOrders`
 - 请求方式：`POST`
 
@@ -4248,7 +4328,7 @@ authority为用户权限:
 ```
 
 ---
-### 94. [收货点获取订单详情](#94-收货点获取订单详情getorderdetail)
+### 98. [收货点获取订单详情](#98-收货点获取订单详情getorderdetail)
 - `getOrderDetail`
 - 请求方式：`POST`
 
@@ -4320,7 +4400,7 @@ authority为用户权限:
 ```
 
 ---
-### 95. [收货点获取成员列表](#95-收货点获取成员列表getmemberlist)
+### 99. [收货点获取成员列表](#99-收货点获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -4360,7 +4440,7 @@ authority为用户权限:
 ```
 
 ---
-### 96. [收货点修改成员权限](#96-收货点修改成员权限modifymemberauthority)
+### 100. [收货点修改成员权限](#100-收货点修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -4390,7 +4470,7 @@ authority为用户权限:
 ```
 
 ---
-### 97. [收货点通过手机号搜索成员](#97-收货点通过手机号搜索成员getmemberbyphone)
+### 101. [收货点通过手机号搜索成员](#101-收货点通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -4415,7 +4495,7 @@ authority为用户权限:
 ```
 
 ---
-### 98. [收货点获取关联店铺列表](#98-收货点获取关联店铺列表getrefershoplist)
+### 102. [收货点获取关联店铺列表](#102-收货点获取关联店铺列表getrefershoplist)
 - `getReferShopList`
 - 请求方式：`POST`
 
@@ -4502,7 +4582,7 @@ authority为用户权限:
 ```
 
 ---
-### 99. [收货点设置关联店铺](#99-收货点设置关联店铺setrefershop)
+### 103. [收货点设置关联店铺](#103-收货点设置关联店铺setrefershop)
 - `setReferShop`
 - 请求方式：`POST`
 
@@ -4518,7 +4598,7 @@ authority为用户权限:
 ```
 
 ---
-### 100. [收货点添加区域的路线提成](#100-收货点添加区域的路线提成addregionprofit)
+### 104. [收货点添加区域的路线提成](#104-收货点添加区域的路线提成addregionprofit)
 - `addRegionProfit`
 - 请求方式：`POST`
 
@@ -4549,7 +4629,7 @@ authority为用户权限:
 ```
 
 ---
-### 101. [收货点获取区域的路线提成列表](#101-收货点获取区域的路线提成列表getregionprofitlist)
+### 105. [收货点获取区域的路线提成列表](#105-收货点获取区域的路线提成列表getregionprofitlist)
 - `getRegionProfitList`
 - 请求方式：`POST`
 
@@ -4593,7 +4673,7 @@ authority为用户权限:
 ```
 
 ---
-### 102. [收货点获取区域的路线提成详情](#102-收货点获取区域的路线提成详情getregionprofitdetail)
+### 106. [收货点获取区域的路线提成详情](#106-收货点获取区域的路线提成详情getregionprofitdetail)
 - `getRegionProfitDetail`
 - 请求方式：`POST`
 
@@ -4621,7 +4701,7 @@ authority为用户权限:
 ```
 
 ---
-### 103. [收货点修改区域的路线提成](#103-收货点修改区域的路线提成modifyregionprofit)
+### 107. [收货点修改区域的路线提成](#107-收货点修改区域的路线提成modifyregionprofit)
 - `modifyRegionProfit`
 - 请求方式：`POST`
 
@@ -4654,7 +4734,7 @@ authority为用户权限:
 ```
 
 ---
-### 104. [收货点删除区域的路线提成](#104-收货点删除区域的路线提成removeregionprofit)
+### 108. [收货点删除区域的路线提成](#108-收货点删除区域的路线提成removeregionprofit)
 - `removeRegionProfit`
 - 请求方式：`POST`
 
@@ -4682,7 +4762,7 @@ authority为用户权限:
 ```
 
 ---
-### 105. [收货点批量设置区域的路线提成](#105-收货点批量设置区域的路线提成setregionprofitwithlist)
+### 109. [收货点批量设置区域的路线提成](#109-收货点批量设置区域的路线提成setregionprofitwithlist)
 - `setRegionProfitWithList`
 - 请求方式：`POST`
 
@@ -4704,18 +4784,18 @@ authority为用户权限:
 
 ---
 
-### 106. [用户协议](#106-用户协议user)
+### 110. [用户协议](#110-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 107. [获取软件许可协议](#107-获取软件许可协议software)
+### 111. [获取软件许可协议](#111-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 108. [关于](#108-关于about)
+### 112. [关于](#112-关于about)
 - `about`
 - url: `protocals/about.html`
