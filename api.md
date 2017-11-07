@@ -2556,6 +2556,20 @@ authority为用户权限:
       "address": "贵州省贵阳市南明区花果园街道花果园L2区",
       "id": "5995496cd1df03410425a904"
     },
+    "sendDoorList": [
+        {
+            "sendDoorEndPoint": "城关镇",
+            "sendDoorEndPointLastCode": 520121100,
+            "enable": true,
+            "sendDoorPrice": 110,
+            "sendDoorMinFee": 60,
+            "baseSendDoorPrice": 0,
+            "baseSendDoorMinFee": 0,
+            "updateSendDoorPriceTime": "2017-11-04 09:40:10",
+            "updateSendDoorMinFeeTime": "2017-11-04 09:40:10",
+            "_id": "59fd1a7aa5b6e90e5619f1a8"
+        }
+    ],
     "startPoint": "贵州省贵阳市南明区花果园街道花果园L2区",
     "masterDefaultProfitRate": 0.1,
     "id": "59979eef74487466abd0dc8b"
