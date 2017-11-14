@@ -118,10 +118,18 @@
 ##### 108. [收货点修改区域的路线提成(modifyRegionProfit)](#108-收货点修改区域的路线提成)
 ##### 109. [收货点删除区域的路线提成(removeRegionProfit)](#109-收货点删除区域的路线提成)
 ##### 110. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#110-收货点批量设置区域的路线提成)
+## 同城配送
+##### 111. [获取分店设置了上门自提竞价的物流公司列表(getClientPickShipperList)](#111-获取分店设置了上门自提竞价的物流公司列表)
+##### 112. [短途物流公司扫描入库(placeStorage)](#112-短途物流公司扫描入库)
+##### 113. [短途物流公司设置送货上门(setClientPickOrderTransportFee)](#113-短途物流公司设置送货上门)
+##### 114. [短途物流公司设置货车(setCityTruck)](#114-短途物流公司设置货车)
+##### 115. [短途物流公司获取货车详情(getCityTruckDetail)](#115-短途物流公司获取货车详情)
+##### 116. [短途物流公司扫描装车(scanLoadOrderForCityDistribute)](#116-短途物流公司扫描装车)
+##### 117. [短途物流公司获取货车的货单列表(getOrderListInCityTruck)](#117-短途物流公司获取货车的货单列表)
 ## 协议文档
-##### 111. [用户协议(user)](#111-用户协议)
-##### 112. [获取软件许可协议(software)](#112-获取软件许可协议)
-##### 113. [关于(about)](#113-关于)
+##### 118. [用户协议(user)](#118-用户协议)
+##### 119. [获取软件许可协议(software)](#119-获取软件许可协议)
+##### 120. [关于(about)](#120-关于)
 
 ---
 
@@ -4813,22 +4821,325 @@ authority为用户权限:
 ```
 
 ---
+## 同城配送
+
+---
+
+### 111. [获取分店设置了上门自提竞价的物流公司列表](#111-获取分店设置了上门自提竞价的物流公司列表getclientpickshipperlist)
+- `getClientPickShipperList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperList": [
+      {
+        "clientPickEnable": true,
+        "clientPickPrice": 10,
+        "id": "5a04fa648fbe0257a3922ddb",
+        "name": " 13500000000同城物流",
+        "shipperType": 1
+      }
+    ]
+  }
+}
+```
+
+---
+### 112. [短途物流公司扫描入库](#112-短途物流公司扫描入库placestorage)
+- `placeStorage`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| count | Number | 数量 |
+
+```js
+{
+  "success": true,
+  "order": {
+    "placeStoreTime": "2017-11-14 10:51:55",
+    "shipperStoreScannerId": "5a04f98a8fbe0257a3922dd3",
+    "preOrderId": "5a03c19ffd520c16113012cd",
+    "shopId": "5a04f68b8fbe0257a3922db5",
+    "senderId": "5a04f98a8fbe0257a3922dd3",
+    "senderPhone": "18684165865",
+    "senderName": "呵呵",
+    "receiverId": "59faced36b15a74e0438faee",
+    "receiverPhone": "13312341234",
+    "receiverName": "后过敏",
+    "name": "破破网",
+    "endPoint": "云岩区中华中路街道",
+    "sendDoorEndPoint": null,
+    "receivePartmentId": "5a04f7018fbe0257a3922db9",
+    "receiveMemberId": "5a04f7018fbe0257a3922db8",
+    "placeOrderTime": "2017-11-10 10:09:47",
+    "modifyTime": "2017-11-10 10:24:30",
+    "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+    "deductError": false,
+    "roadmapId": "5a04fd559d2eb14135c8a3a4",
+    "shipperChairManId": "5a04f98a8fbe0257a3922dd3",
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "warehouse": " 13500000000同城物流",
+    "nextOrderId": "5a050eff1d6a5427bc7dcbf1",
+    "createTime": "2017-11-10 10:09:47",
+    "stateList": [
+      {
+        "state": 6,
+        "count": 1,
+        "_id": "5a0a5a4bc9b3cd6f647085d5"
+      },
+      {
+        "state": 5,
+        "count": 9,
+        "_id": "5a050eff1d6a5427bc7dcbf3"
+      }
+    ],
+    "additionalFee": 0,
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 1,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 1,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 1,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 0,
+    "weight": 1,
+    "totalNumbers": 10,
+    "sendDoorMinFee": 0,
+    "sendDoorPrice": 0,
+    "minFee": 0.2,
+    "price": 0.2,
+    "needBondAmount": 10000,
+    "roadmapRankIndex": 0,
+    "isClientPick": false,
+    "sendDoorEndPointLastCode": 0,
+    "isSendDoor": false,
+    "endPointLastCode": 520103001,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": true,
+    "isTransferOrder": true,
+    "id": "5a050a6b1d6a5427bc7dcbe5"
+  }
+}
+```
+
+---
+### 113. [短途物流公司设置送货上门](#113-短途物流公司设置送货上门setclientpickordertransportfee)
+- `setClientPickOrderTransportFee`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| isTransport | Boolean | 是否要送货上门 |
+| endPoint | String | 送货上门地址 |
+| transportFee | Number | 送货上门费用 |
+| isScan | Boolean | 是否为扫描货单（还可以在货单列表修改送货上门状态） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 114. [短途物流公司设置货车](#114-短途物流公司设置货车setcitytruck)
+- `setCityTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| plateNo | String | 车牌号 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 115. [短途物流公司获取货车详情](#115-短途物流公司获取货车详情getcitytruckdetail)
+- `getCityTruckDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "plateNo": "123456",
+    "driverId": "5a04f98a8fbe0257a3922dd3",
+    "createTime": "2017-11-14 11:06:52",
+    "unloadAllOrderList": [],
+    "totalSize": 0,
+    "totalWeight": 0,
+    "totalNumbers": 0,
+    "orderCount": 0,
+    "orderList": [],
+    "locationList": [],
+    "id": "5a0a5dccc9b3cd6f64708718"
+  }
+}
+```
+
+---
+### 116. [短途物流公司扫描装车](#116-短途物流公司扫描装车scanloadorderforcitydistribute)
+- `scanLoadOrderForCityDistribute`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| count | Number | 数量 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "plateNo": "123456",
+    "driverId": "5a04f98a8fbe0257a3922dd3",
+    "createTime": "2017-11-14 11:06:52",
+    "unloadAllOrderList": [
+      {
+        "senderPhone": "18684165865",
+        "senderName": "呵呵",
+        "receiverPhone": "13312341234",
+        "receiverName": "后过敏",
+        "endPoint": "张三家门口1",
+        "totalNumbers": 10,
+        "id": "5a050a6b1d6a5427bc7dcbe5",
+        "unloadNumber": 9
+      }
+    ],
+    "totalSize": 0,
+    "totalWeight": 0.1,
+    "totalNumbers": 1,
+    "orderCount": 1,
+    "locationList": [],
+    "id": "5a0a5dccc9b3cd6f64708718",
+    "latestOrder": {
+      "senderPhone": "18684165865",
+      "senderName": "呵呵",
+      "receiverPhone": "13312341234",
+      "receiverName": "后过敏",
+      "endPoint": "张三家门口1",
+      "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+      "createTime": "2017-11-10 10:09:47",
+      "size": 0,
+      "weight": 1,
+      "totalNumbers": 10,
+      "id": "5a050a6b1d6a5427bc7dcbe5"
+    }
+  }
+}
+```
+
+---
+### 117. [短途物流公司获取货车的货单列表](#117-短途物流公司获取货车的货单列表getorderlistincitytruck)
+- `getOrderListInCityTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "orderList": [
+      {
+        "senderPhone": "18684165865",
+        "senderName": "呵呵",
+        "receiverId": "59faced36b15a74e0438faee",
+        "receiverPhone": "13312341234",
+        "receiverName": "后过敏",
+        "name": "破破网",
+        "endPoint": "张三家门口1",
+        "placeOrderTime": "2017-11-10 10:09:47",
+        "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+        "roadmapId": "5a04fd559d2eb14135c8a3a4",
+        "createTime": "2017-11-10 10:09:47",
+        "stateList": [
+          {
+            "state": 8,
+            "count": 1,
+            "_id": "5a0a5f2cc9b3cd6f6470871a"
+          },
+          {
+            "state": 6,
+            "count": 9,
+            "_id": "5a0a5bb3c9b3cd6f647085d7"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "proxyCharge": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 1,
+        "payMode": 0,
+        "isReachPay": false,
+        "isInsuance": false,
+        "size": 0,
+        "weight": 1,
+        "totalNumbers": 10,
+        "isSendDoor": false,
+        "id": "5a050a6b1d6a5427bc7dcbe5",
+        "shop": {
+          "name": "13300000000贵阳分店",
+          "address": "贵州省贵阳市乌当区",
+          "id": "5a04f68b8fbe0257a3922db5"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 111. [用户协议](#111-用户协议user)
+### 118. [用户协议](#118-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 112. [获取软件许可协议](#112-获取软件许可协议software)
+### 119. [获取软件许可协议](#119-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 113. [关于](#113-关于about)
+### 120. [关于](#120-关于about)
 - `about`
 - url: `protocals/about.html`
