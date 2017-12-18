@@ -18,13 +18,16 @@
 ##### 16. [给客户打电话(callVisitCustomer)](#16-给客户打电话)
 ##### 17. [添加客户(addCustomer)](#17-添加客户)
 ##### 18. [获取业务员名字(getUserNameByPhone)](#18-获取业务员名字)
-##### 19. [业务员申请成为上级(requestBecomeSuperior)](#19-业务员申请成为上级)
-##### 20. [回应业务员申请成为我的上级(answerBecomeSubor)](#20-回应业务员申请成为我的上级)
-##### 21. [获取客户列表(getCustomers)](#21-获取客户列表)
+##### 19. [获取收到的通知数(getNotifyCount)](#19-获取收到的通知数)
+##### 20. [获取通知列表(getNotifyList)](#20-获取通知列表)
+##### 21. [读通知(readNotify)](#21-读通知)
+##### 22. [业务员申请成为上级(requestBecomeSuperior)](#22-业务员申请成为上级)
+##### 23. [回应业务员申请成为我的上级(answerBecomeSubor)](#23-回应业务员申请成为我的上级)
+##### 24. [获取客户列表(getCustomers)](#24-获取客户列表)
 ## 协议文档
-##### 22. [用户协议(user)](#22-用户协议)
-##### 23. [获取软件许可协议(software)](#23-获取软件许可协议)
-##### 24. [关于(about)](#24-关于)
+##### 25. [用户协议(user)](#25-用户协议)
+##### 26. [获取软件许可协议(software)](#26-获取软件许可协议)
+##### 27. [关于(about)](#27-关于)
 
 ---
 
@@ -436,9 +439,81 @@
 }
 
 ```
+
 ---
 
-### 19. [业务员申请成为上级](#19-业务员申请成为上级requestbecomesuperior)
+### 19. [获取收到的通知数](#19-获取收到的通知数getnotifycount)
+- `getNotifyCount`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 0
+  }
+}
+
+```
+---
+
+### 20. [获取通知列表](#20-获取通知列表getnotifylist)
+- `getNotifyList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | Number | 0:接收,1:发送 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "notifyList": [
+      {
+        "type": 30000,
+        "data": {
+          "superiorId": "5a331fc059bbe877c873f160",
+          "superiorName": "业务员0"
+        },
+        "createTime": "2017-12-18 15:12:11",
+        "needFeadback": true,
+        "id": "5a376a4bf9ef7148fd1004b8"
+      }
+    ]
+  }
+}
+
+```
+---
+
+### 21. [读通知](#21-读通知readnotify)
+- `readNotify`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| notifyId | ID | 通知Id |
+
+
+```js
+{
+  "success": true
+}
+
+```
+---
+
+### 22. [业务员申请成为上级](#22-业务员申请成为上级requestbecomesuperior)
 - `requestBecomeSuperior`
 - 请求方式：`POST`
 
@@ -456,7 +531,7 @@
 ```
 ---
 
-### 20. [回应业务员申请成为我的上级](#20-回应业务员申请成为我的上级answerbecomesubor)
+### 23. [回应业务员申请成为我的上级](#23-回应业务员申请成为我的上级answerbecomesubor)
 - `answerBecomeSubor`
 - 请求方式：`POST`
 
@@ -476,7 +551,7 @@
 
 ---
 
-### 21. [获取客户列表](#21-获取客户列表getcustomers)
+### 24. [获取客户列表](#24-获取客户列表getcustomers)
 - `getCustomers`
 - 请求方式：`POST`
 
@@ -518,18 +593,18 @@
 
 ---
 
-### 22. [用户协议](#22-用户协议user)
+### 25. [用户协议](#25-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 23. [获取软件许可协议](#23-获取软件许可协议software)
+### 26. [获取软件许可协议](#26-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 24. [关于](#24-关于about)
+### 27. [关于](#27-关于about)
 - `about`
 - url: `protocals/about.html`
