@@ -11,11 +11,20 @@
 ##### 9. [修改个人信息(modifyPersonalInfo)](#9-修改个人信息)
 ##### 10. [修改密码(modifyPassword)](#10-修改密码)
 ##### 11. [意见反馈(submitFeedback)](#11-意见反馈)
-##### 12. [货主获取交易记录(getBillList)](#12-货主获取交易记录)
+##### 12. [获取交易记录列表(getBillList)](#12-获取交易记录列表)
+##### 13. [获取交易记录(getBills)](#13-获取交易记录)
+##### 14. [业务员获取下级列表(getSuborList)](#14-业务员获取下级列表)
+##### 15. [检查客户状态(checkCustomerPhone)](#15-检查客户状态)
+##### 16. [给客户打电话(callVisitCustomer)](#16-给客户打电话)
+##### 17. [添加客户(addCustomer)](#17-添加客户)
+##### 18. [获取业务员名字(getUserNameByPhone)](#18-获取业务员名字)
+##### 19. [业务员申请成为上级(requestBecomeSuperior)](#19-业务员申请成为上级)
+##### 20. [回应业务员申请成为我的上级(answerBecomeSubor)](#20-回应业务员申请成为我的上级)
+##### 21. [获取客户列表(getCustomers)](#21-获取客户列表)
 ## 协议文档
-##### 13. [用户协议(user)](#13-用户协议)
-##### 14. [获取软件许可协议(software)](#14-获取软件许可协议)
-##### 15. [关于(about)](#15-关于)
+##### 22. [用户协议(user)](#22-用户协议)
+##### 23. [获取软件许可协议(software)](#23-获取软件许可协议)
+##### 24. [关于(about)](#24-关于)
 
 ---
 
@@ -173,175 +182,21 @@
 {
   "success": true,
   "context": {
-    "phone": "18685192480",
-    "email": "42550564@qq.com",
-    "registerTime": "2017-08-08 19:43:00",
-    "createTime": "2017-08-17T02:46:25.879Z",
-    "authority": [
-      {
-        "20011": "搬货的权限"
-      },
-      {
-        "10008": "修改所在部门信息的权限"
-      },
-      {
-        "10001": "创建成员的权限"
-      },
-      {
-        "10002": "修改成员信息的权限"
-      },
-      {
-        "10003": "删除成员的权限"
-      },
-      {
-        "10005": "充值的权限"
-      },
-      {
-        "10006": "提现的权限"
-      }
-    ],
+    "phone": "13712341230",
+    "starLevel": 0,
+    "name": "业务员0",
+    "joinTime": "2017-12-15T01:05:09.330Z",
+    "superiorId": "5a331fc159bbe877c873f166",
+    "registerTime": "2017-12-15 09:05:04",
+    "dropStarLevel": 0,
+    "appraiseStarLevel": 0,
+    "businessStarLevel": 0,
+    "suborCount": 0,
+    "isSetPaymentPassword": 1,
     "sex": 0,
-    "partment": {
-      "shopId": "5995496cd1df03410425a904",
-      "name": "王大搬运部",
-      "type": 2,
-      "descript": "我们活着的意义就是移动",
-      "phoneList": "0851-98989000;0851-98989001",
-      "isBusy": false,
-      "price": 100,
-      "modifyTime": "2017-08-21 12:01:26",
-      "workTruckId": "59a75bfd4b0e7a4e17cde5da",
-      "createTime": "2017-08-18 09:24:02",
-      "enable": true,
-      "memberCount": 1,
-      "chargeMan": {
-        "phone": "18385192481",
-        "name": "搬运工负责人",
-        "id": "599641b27338534997932c44"
-      },
-      "id": "599641b27338534997932c45"
-    },
-    "shipper": {
-      "name": "广顺达物流公司",
-      "logo": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6c4",
-      "image": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6c9",
-      "sign": "这是一家非常专业的物流公司",
-      "phoneList": "0851-86190987;18185192480",
-      "address": "贵阳市花果园",
-      "legalName": "方运江",
-      "legalPhone": "18085192480",
-      "createTime": "2017-08-08 19:43:01",
-      "legalIDCard": [
-        "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6cd",
-        "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6ca"
-      ],
-      "acountAmount": 99930000,
-      "capital": 10000000,
-      "descriptList": [
-        {
-          "img": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6cc",
-          "text": "这是我们公司的车队"
-        }
-      ],
-      "chairMan": {
-        "phone": "18685192480",
-        "id": "5989a3c4b48db929e46ad6b0",
-        "phoneList": ""
-      },
-      "id": "5989a3c5b48db929e46ad6ce",
-      "registerShopList": [
-        {
-          "shop": {
-            "name": "华通物流超市",
-            "address": {
-              "name": "贵州省贵阳市南明区花果园街道花果园L2区"
-            },
-            "id": "5989a3c0b48db929e46ad68d"
-          },
-          "id": "5989a3c6b48db929e46ad6d0"
-        }
-      ]
-    },
-    "agent": {
-      "name": "18684165865收货点",
-      "logo": "http://localhost:3000/api/image?id=59f698e10931cf0b4e8b5262",
-      "image": "http://localhost:3000/api/image?id=59f698e70931cf0b4e8b5265",
-      "sign": "18684165865收货点18684165865收货点",
-      "phoneList": "18684165865",
-      "address": "贵州省贵阳市云岩区",
-      "location": [
-        106.709177,
-        26.629907
-      ],
-      "legalName": "1868416586",
-      "legalPhone": "18684165865",
-      "createTime": "2017-10-30 11:13:59",
-      "legalIDCard": [],
-      "descriptList": [],
-      "id": "59f698f70931cf0b4e8b5266",
-      "chairMan": {
-        "phone": "18684165865",
-        "id": "59df0a26009deb7e9298e18f"
-      },
-      "referShop": {
-        "name": "15555555501",
-        "address": "贵州省贵阳市云岩区黔灵山分店",
-        "id": "59e426b1b6ee191fe5d4fbf8"
-      }
-    },
-    "phoneList": "",
-    "userId": "5989a3c4b48db929e46ad6b0"
+    "userId": "5a331fc059bbe877c873f160"
   }
 }
-
-```
-###### authority的说明：
-```
-authority为用户权限:
-(1)总部权限
-    0:创建分店的权限
-    1:修改分店信息的权限
-    2:删除分店的权限
-    3:查看分店列表的权限
-    4:修改设置的权限
-    5:创建收货点的权限
-    6:修改收货点的权限
-    7:删除收货点的权限
-    8:查看收货点的权限
-(2)公共权限
-    10000:修改所在物流超市信息的权限
-    10001:创建成员的权限
-    10002:修改成员信息的权限
-    10003:删除成员的权限
-    10004:查看成员的权限
-    10005:充值的权限
-    10006:提现的权限
-    10007:修改路线的提成的权限
-(3)分店权限
-    20000:创建物流公司的权限
-    20001:修改物流公司的权限
-    20002:删除物流公司的权限
-    20003:查看物流公司的权限
-    20004:创建部门的权限
-    20005:修改部门信息的权限
-    20006:删除部门的权限
-    20007:查看部门的权限
-    20008:收货的权限(收货部人员)
-    20009:库管的权限(库管部人员)
-    20010:搬货的权限(搬运部人员)
-    20011:安检的权限(保安部人员)
-    20012:配送的权限(配送部人员)
-(4)物流公司
-    30000:修改物流公司信息的权限
-    30001:修改物流公司成员权限的权限
-    30002:创建路线的权限
-    30003:修改路线的权限
-    30004:删除路线的权限
-    30005:查看路线的权限
-(5)收货点
-    40000:修改收货点信息的权限
-    40001:修改收货点成员权限的权限
-    40002:收货点下单的权限
 
 ```
 ---
@@ -356,7 +211,6 @@ authority为用户权限:
 | phone | String | 登录手机号码 |
 | name | String | 用户名 |
 | head | String | 头像 |
-| position | String | 职位 |
 
 
 ```js
@@ -403,7 +257,7 @@ authority为用户权限:
 
 ---
 
-### 12. [货主获取交易记录](#12-货主获取交易记录getbilllist)
+### 12. [获取交易记录列表](#12-获取交易记录列表getbilllist)
 - `getBillList`
 - 请求方式：`POST`
 
@@ -434,22 +288,248 @@ authority为用户权限:
 ```
 
 ---
+
+### 13. [获取交易记录](#13-获取交易记录getbills)
+- `getBills`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | income,withdraw |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "withdraw": {
+      "count": 0,
+      "list": []
+    },
+    "income": {
+      "count": 0,
+      "list": []
+    }
+  }
+}
+
+```
+
+---
+
+### 14. [业务员获取下级列表](#14-业务员获取下级列表getsuborlist)
+- `getSuborList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | normal,history,public |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "normal": {
+      "list": [
+        {
+          "suspend": false,
+          "id": "5a331fb659bbe877c873f130",
+          "name": "发货人0",
+          "phone": "13812341200",
+          "fixedStarLevel": 3,
+          "maxFloatStarLevel": 0,
+          "starLevel": 3,
+          "suspendTime": null,
+          "lastCallTime": "2017-12-15 09:05:09"
+        }
+      ]
+    },
+    "history": {
+      "list": []
+    },
+    "public": {
+      "list": []
+    }
+  }
+}
+
+```
+
+---
+
+### 15. [检查客户状态](#15-检查客户状态checkcustomerphone)
+- `checkCustomerPhone`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| phone | String | 客户手机号 |
+
+
+```js
+{
+  "success": true
+}
+
+```
+---
+
+### 16. [给客户打电话](#16-给客户打电话callvisitcustomer)
+- `callVisitCustomer`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| phone | String | 客户手机号 |
+
+
+```js
+{
+  "success": true
+}
+
+```
+---
+
+### 17. [添加客户](#17-添加客户addcustomer)
+- `addCustomer`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| phone | String | 客户手机号 |
+
+
+```js
+{
+  "success": true
+}
+
+```
+
+---
+
+### 18. [获取业务员名字](#18-获取业务员名字getusernamebyphone)
+- `getUserNameByPhone`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| phone | String | 业务员手机号 |
+
+
+```js
+{
+  "success": true,
+  "context": {
+      "name": "业务员3"
+    }
+}
+
+```
+---
+
+### 19. [业务员申请成为上级](#19-业务员申请成为上级requestbecomesuperior)
+- `requestBecomeSuperior`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| phone | String | 要发展的业务员手机号 |
+
+
+```js
+{
+  "success": true
+}
+
+```
+---
+
+### 20. [回应业务员申请成为我的上级](#20-回应业务员申请成为我的上级answerbecomesubor)
+- `answerBecomeSubor`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| notifyId | ID | 通知Id |
+| isOk | Boolean | 是否同意 |
+
+
+```js
+{
+  "success": true
+}
+
+```
+
+---
+
+### 21. [获取客户列表](#21-获取客户列表getcustomers)
+- `getCustomers`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| keyword | String | 关键字 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "suborList": [
+      {
+        "phone": "13712341231",
+        "starLevel": 0,
+        "name": "业务员1",
+        "joinTime": "2017-12-15T01:05:09.281Z",
+        "superiorId": "5a331fc259bbe877c873f16c",
+        "registerTime": "2017-12-15 09:05:05",
+        "dropStarLevel": 0,
+        "appraiseStarLevel": 0,
+        "businessStarLevel": 0,
+        "suborCount": 1,
+        "isSetPaymentPassword": 1,
+        "sex": 0,
+        "id": "5a331fc159bbe877c873f166"
+      }
+    ]
+  }
+}
+
+```
+
+---
 ## 协议文档
 
 ---
 
-### 13. [用户协议](#13-用户协议user)
+### 22. [用户协议](#22-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 14. [获取软件许可协议](#14-获取软件许可协议software)
+### 23. [获取软件许可协议](#23-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 15. [关于](#15-关于about)
+### 24. [关于](#24-关于about)
 - `about`
 - url: `protocals/about.html`
