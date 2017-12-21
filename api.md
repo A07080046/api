@@ -24,10 +24,16 @@
 ##### 22. [业务员申请成为上级(requestBecomeSuperior)](#22-业务员申请成为上级)
 ##### 23. [回应业务员申请成为我的上级(answerBecomeSubor)](#23-回应业务员申请成为我的上级)
 ##### 24. [业务员获取下级列表(getSuborList)](#24-业务员获取下级列表)
+##### 25. [业务员按月获取收益(getIncomeByMonth)](#25-业务员按月获取收益)
+##### 26. [业务员通过日期和级别获取收益(getIncomeByLevel)](#26-业务员通过日期和级别获取收益)
+##### 27. [业务员通过日期获取收益(getIncomeByDate)](#27-业务员通过日期获取收益)
 ## 协议文档
-##### 25. [用户协议(user)](#25-用户协议)
-##### 26. [获取软件许可协议(software)](#26-获取软件许可协议)
-##### 27. [关于(about)](#27-关于)
+##### 28. [用户协议(user)](#28-用户协议)
+##### 29. [获取软件许可协议(software)](#29-获取软件许可协议)
+##### 30. [关于(about)](#30-关于)
+##### 31. [分销规则(user)](#31-分销规则)
+##### 32. [星级提成(software)](#32-星级提成)
+##### 33. [星级规则(about)](#33-星级规则)
 
 ---
 
@@ -390,6 +396,7 @@
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | phone | String | 客户手机号 |
+| timelong | number | 通话时长（单位秒） |
 
 
 ```js
@@ -408,7 +415,7 @@
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | phone | String | 客户手机号 |
-
+| timelong | number | 通话时长（单位秒） |
 
 ```js
 {
@@ -586,24 +593,119 @@
 }
 
 ```
+---
+
+### 25. [业务员按月获取收益](#25-业务员按月获取收益getincomebymonth)
+- `getIncomeByMonth`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| date | String | 格式 YYYY-MM, 如果不传为当月|
+```js
+{
+  "success": true,
+  "context": {
+    "incomeList": [
+      {
+        "amount": 0,
+        "date": "12-21"
+      }
+    ]
+  }
+}
+
+```
+---
+
+### 26. [业务员通过日期和级别获取收益](#26-业务员通过日期和级别获取收益getincomebylevel)
+- `getIncomeByLevel`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| date | String | 格式 YYYY-MM-DD, 如果不传为今天|
+| level | number | 0为直接收益，1-4为分销收益|
+
+```js
+{
+  "success": true,
+  "context": {
+    "incomeList": [
+      {
+        "amount": 0,
+        "senderName": "发货人0"
+      }
+    ]
+  }
+}
+
+```
+---
+
+### 27. [业务员通过日期获取收益](#27-业务员通过日期获取收益getincomebydate)
+- `getIncomeByDate`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| date | String | 格式 YYYY-MM-DD, 如果不传为今天|
+
+```js
+{
+  "success": true,
+  "context": {
+    "total": 0,
+    "list": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
+
+```
 
 ---
 ## 协议文档
 
 ---
 
-### 25. [用户协议](#25-用户协议user)
+### 28. [用户协议](#28-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 26. [获取软件许可协议](#26-获取软件许可协议software)
+### 29. [获取软件许可协议](#29-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 27. [关于](#27-关于about)
+### 30. [关于](#30-关于about)
 - `about`
 - url: `protocals/about.html`
+
+---
+
+### 31. [分销规则](#31-分销规则user)
+- `user`
+- url: `protocals/distribution.html`
+
+---
+
+### 32. [星级提成](#32-星级提成software)
+- `software`
+- url: `protocals/rankIncome.html`
+
+---
+
+### 33. [星级规则](#33-星级规则about)
+- `about`
+- url: `protocals/rankRule.html`
