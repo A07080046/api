@@ -31,9 +31,9 @@
 ##### 28. [用户协议(user)](#28-用户协议)
 ##### 29. [获取软件许可协议(software)](#29-获取软件许可协议)
 ##### 30. [关于(about)](#30-关于)
-##### 31. [分销规则(user)](#31-分销规则)
-##### 32. [星级提成(software)](#32-星级提成)
-##### 33. [星级规则(about)](#33-星级规则)
+##### 31. [分销规则(distribution)](#31-分销规则)
+##### 32. [星级提成(rankIncome)](#32-星级提成)
+##### 33. [星级规则(rankRule)](#33-星级规则)
 
 ---
 
@@ -694,18 +694,18 @@
 
 ---
 
-### 31. [分销规则](#31-分销规则user)
-- `user`
+### 31. [分销规则](#31-分销规则distribution)
+- `distribution`
 - url: `protocals/distribution.html`
 
 ---
 
-### 32. [星级提成](#32-星级提成software)
-- `software`
+### 32. [星级提成](#32-星级提成rankincome)
+- `rankIncome`
 - url: `protocals/rankIncome.html`
 
 ---
 
-### 33. [星级规则](#33-星级规则about)
-- `about`
+### 33. [星级规则](#33-星级规则rankrule)
+- `rankRule`
 - url: `protocals/rankRule.html`
