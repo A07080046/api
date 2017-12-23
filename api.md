@@ -27,13 +27,14 @@
 ##### 25. [业务员按月获取收益(getIncomeByMonth)](#25-业务员按月获取收益)
 ##### 26. [业务员通过日期和级别获取收益(getIncomeByLevel)](#26-业务员通过日期和级别获取收益)
 ##### 27. [业务员通过日期获取收益(getIncomeByDate)](#27-业务员通过日期获取收益)
+##### 28. [业务员通过日期获取收益等级详情(getIncomeDetail)](#28-业务员通过日期获取收益等级详情)
 ## 协议文档
-##### 28. [用户协议(user)](#28-用户协议)
-##### 29. [获取软件许可协议(software)](#29-获取软件许可协议)
-##### 30. [关于(about)](#30-关于)
-##### 31. [分销规则(distribution)](#31-分销规则)
-##### 32. [星级提成(rankIncome)](#32-星级提成)
-##### 33. [星级规则(rankRule)](#33-星级规则)
+##### 29. [用户协议(user)](#29-用户协议)
+##### 30. [获取软件许可协议(software)](#30-获取软件许可协议)
+##### 31. [关于(about)](#31-关于)
+##### 32. [分销规则(distribution)](#32-分销规则)
+##### 33. [星级提成(rankIncome)](#33-星级提成)
+##### 34. [星级规则(rankRule)](#34-星级规则)
 
 ---
 
@@ -659,27 +660,45 @@
 {
   "success": true,
   "context": {
-    "total": 0,
-    "list": [
-      [
-        {
-          "amount": 0,
-          "date": "2017-12-22"
-        },
-        {
-          "amount": 0,
-          "date": "2017-12-21"
-        }
-      ],
-      [],
-      [],
-      [],
-      []
+    "incomeList": [
+      {
+        "amount": 0,
+        "date": "12-22"
+      },
+      {
+        "amount": 0,
+        "date": "12-21"
+      }
     ]
   }
 }
+```
+---
+
+### 28. [业务员通过日期获取收益等级详情](#28-业务员通过日期获取收益等级详情getincomedetail)
+- `getIncomeDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| date | String | 日期 YYYY-MM-DD, 如果不传为今天|
 
 
+```js
+{
+  "success": true,
+  "context": {
+    "total": 0,
+    "list": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
 ```
 
 ---
@@ -687,36 +706,36 @@
 
 ---
 
-### 28. [用户协议](#28-用户协议user)
+### 29. [用户协议](#29-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 29. [获取软件许可协议](#29-获取软件许可协议software)
+### 30. [获取软件许可协议](#30-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 30. [关于](#30-关于about)
+### 31. [关于](#31-关于about)
 - `about`
 - url: `protocals/about.html`
 
 ---
 
-### 31. [分销规则](#31-分销规则distribution)
+### 32. [分销规则](#32-分销规则distribution)
 - `distribution`
 - url: `protocals/distribution.html`
 
 ---
 
-### 32. [星级提成](#32-星级提成rankincome)
+### 33. [星级提成](#33-星级提成rankincome)
 - `rankIncome`
 - url: `protocals/rankIncome.html`
 
 ---
 
-### 33. [星级规则](#33-星级规则rankrule)
+### 34. [星级规则](#34-星级规则rankrule)
 - `rankRule`
 - url: `protocals/rankRule.html`
