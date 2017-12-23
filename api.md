@@ -354,7 +354,8 @@
           "maxFloatStarLevel": 0,
           "starLevel": 3,
           "suspendTime": null,
-          "lastCallTime": "2017-12-15 09:05:09"
+          "lastCallTime": "2017-12-15 09:05:09",
+          "callRecordList": null
         }
       ]
     },
